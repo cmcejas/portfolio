@@ -22,3 +22,50 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Adjust the distance as needed */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Adjust the distance as needed */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slow-fade {
+  animation: fade 2s
+}
+
+.fade-in-up {
+  animation: fadeUp 0.8s ease-in-out; /* Adjust the animation duration and timing function as needed */
+}
+
+.fade-in-up-fast {
+  animation: fadeUp 0.5s ease-in-out; /* Adjust the animation duration and timing function as needed */
+}
+
+.fade-in-down {
+  animation: fadeDown 0.5s ease-in-out; /* Adjust the animation duration and timing function as needed */
+}
