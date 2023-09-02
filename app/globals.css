@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face{
-  font-family: "burtons";
-  src: url("../public/Burtons.otf")
+  font-family: "poppins";
+  src: url("../public/Poppins-Regular.otf")
 }
 
 :root {
