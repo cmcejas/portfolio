@@ -18,7 +18,7 @@ import { link } from 'fs';
 export default function Home() {
   return (
     <div>
-      <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-10 md:px-20 lg:px-40">
+      <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className="sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
             <h1 className="fade-in-up text-xl text-white">Developed by cmcejas</h1>
@@ -70,7 +70,7 @@ export default function Home() {
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
           </div>
 
-          <div className="lg:flex-wrap lg:flex gap-10">
+          <div className="px-10 lg:flex-wrap lg:flex gap-10">
 
             <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
             <Image src={education} width={250} height={250} alt="" className="mx-auto pb-3"/>
