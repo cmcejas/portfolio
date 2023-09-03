@@ -4,6 +4,7 @@ import {
   AiFillGithub, 
   AiFillInstagram
 } from 'react-icons/ai';
+import {BsFillArrowDownCircleFill} from 'react-icons/bs'
 import Image from 'next/image';
 import coding from '../public/coding.png';
 import code from '../public/code.png';
@@ -61,6 +62,9 @@ export default function Home() {
               <AiFillInstagram href="" className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
             </a>
           </div>
+        <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible" href="#">
+          <BsFillArrowDownCircleFill className="animate-bounce cursor-pointer" />
+        </div>
         </section>
 
         {/* second page */}
