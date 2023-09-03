@@ -44,7 +44,7 @@ export default function Home() {
             <p className="fade-in-up text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-lg mx-auto">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
-            I am always learning more in the computer science field and am excited to create new projects. 
+            I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
             </p>
           </div>
           <div className="fade-in-up text-5xl flex justify-center gap-16 py-3 text-slate-700">
