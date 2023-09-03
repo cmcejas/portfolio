@@ -13,7 +13,7 @@ import os from '../public/os.png';
 import briefcase from '../public/briefcase.png';
 import languages from '../public/languages.png';
 import soccer from '../public/soccer.png';
-import resume from '/public/Resume.pdf';
+import resume from '../public/Resume.pdf';
 import { link } from 'fs';
 
 export default function Home() {
