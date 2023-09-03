@@ -20,13 +20,13 @@ export default function Home() {
     <div>
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between">
+          <nav className="sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
             <h1 className="fade-in-up text-xl text-white">Developed by cmcejas</h1>
 
             <ul className="flex items-center">
 
             <li className="fade-in-up">
-              <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1   transition-transform duration-300 flex items-center space-x-2" href="#" download>
+              <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" href="#" download>
                 <span>Resume</span>
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -43,7 +43,7 @@ export default function Home() {
             <h3 className="fade-in-up text-xl py-2 md:text-3xl text-slate-300">High School Student - Computer Science</h3>
             <p className="fade-in-up text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-lg mx-auto">
             I am a high school student focused on computer science. 
-            My interest began at a young age as I started to program in Python since I was 8yrs old. 
+            My interest began at a young age as I started to program in Python since I was 8 years old. 
             I am always learning more in the computer science field and am excited to create new projects. 
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
 
         {/* second page */}
 
-        <section>
+        <section className="pt-40 md:pt-0 lg:pt-0">
           <div>
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
           </div>
@@ -174,6 +174,7 @@ export default function Home() {
 
           </div>
         </section>
+        <br></br>
       </main>
     </div>
   )
