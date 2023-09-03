@@ -63,7 +63,7 @@ export default function Home() {
             </a>
           </div>
         <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible">
-          <BsFillArrowDownCircleFill className="animate-bounce cursor-pointer" />
+          <BsFillArrowDownCircleFill className="animate-bounce" />
         </div>
         </section>
 
