@@ -12,6 +12,7 @@ import consulting from '../public/consulting.png';
 import os from '../public/os.png';
 import briefcase from '../public/briefcase.png';
 import languages from '../public/languages.png';
+import soccer from '../public/soccer.png';
 import resume from '../public/Resume.pdf';
 import { link } from 'fs';
 
@@ -152,6 +153,17 @@ export default function Home() {
               
               <p className="text-gray-400 py-1">German Elementary Level</p>
 
+            </div>
+
+            <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+            <Image src={soccer} width={210} height={250} className="mx-auto pb-3"/>
+              <h3 className="text-lg font-medium pt-8 pb-2 text-white">
+                Hobbies
+              </h3>
+              <p className="text-gray-400 py-1">Club and High School Soccer</p>
+              <p className="text-gray-400 py-1">Acoustic and Electric Guitar</p>
+              <p className="text-gray-400 py-1">Programming personal projects</p>
+              <p className="text-gray-400 py-1">Traveling the world</p>
             </div>
 
           </div>
