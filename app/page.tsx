@@ -62,7 +62,7 @@ export default function Home() {
               <AiFillInstagram href="" className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
             </a>
           </div>
-        <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible">
+        <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 lg:visible">
           <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
         </section>
