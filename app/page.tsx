@@ -21,7 +21,7 @@ export default function Home() {
     <div>
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
-          <nav className="sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
+          <nav className=" invisible md:visible sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
             <h1 className="fade-in-up text-xl text-white">Developed by cmcejas</h1>
 
             <ul className="flex items-center">
@@ -39,10 +39,10 @@ export default function Home() {
 
             </ul>
           </nav>
-          <div className="text-center p-10">
-            <h2 className="fade-in-up text-5xl py-2 bg-clip-text text-transparent text-white font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2>
-            <h3 className="fade-in-up text-xl py-2 md:text-3xl text-slate-300">High School Student - Computer Science</h3>
-            <p className="fade-in-up text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
+          <div className="text-center p-6 md:p-10">
+            <h2 className="fade-in-up text-4xl py-2 bg-clip-text text-transparent text-white font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2><br></br>
+            <h3 className="fade-in-up text-xl py-2 md:text-3xl text-slate-300">High School Student <br></br>Computer Science Focus</h3>
+            <p className="fade-in-up text-sm md:text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
             I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
