@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   icons: 
     {
       icon: '../public.briefcase.png',
-      height: 800,
     }
 }
 
