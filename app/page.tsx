@@ -48,7 +48,7 @@ export default function Home() {
             I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
             </p>
           </div>
-          <div className="fade-in-up text-5xl flex justify-center gap-14 md:gap-16 py-3 text-slate-700">
+          <div className="fade-in-up text-5xl flex justify-center gap-12 md:gap-16 py-3 text-slate-700">
             <a target="_blank" href="https://github.com/cmcejas">
               <AiFillGithub className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
             </a>
