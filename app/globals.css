@@ -69,3 +69,7 @@ body {
 .fade-in-down {
   animation: fadeDown 0.5s ease-in-out; /* Adjust the animation duration and timing function as needed */
 }
+
+html {
+  scroll-behavior: smooth;
+}
