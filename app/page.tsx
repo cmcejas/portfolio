@@ -70,7 +70,7 @@ export default function Home() {
         {/* second page */}
 
         <section id="one" className="pt-40 md:pt-0 lg:pt-0">
-          <br></br>
+          <be className="invisible md:visible"></br>
           <div>
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
           </div>
