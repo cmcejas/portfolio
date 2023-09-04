@@ -18,7 +18,7 @@ import { link } from 'fs';
 
 export default function Home() {
   return (
-    <div>
+    <div id="one">
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className=" invisible md:visible sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
@@ -63,13 +63,13 @@ export default function Home() {
             </a>
           </div>
         <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible">
-          <a href="#one"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
+          <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
         </section>
 
         {/* second page */}
 
-        <section id="one" className="pt-40 md:pt-0 lg:pt-0">
+        <section id="two" className="pt-40 md:pt-0 lg:pt-0">
           <be className="invisible md:visible"></br>
           <div>
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
