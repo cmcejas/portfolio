@@ -63,13 +63,13 @@ export default function Home() {
             </a>
           </div>
         <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible">
-          <BsFillArrowDownCircleFill className="animate-bounce" />
+          <a href="#one"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
         </section>
 
         {/* second page */}
 
-        <section className="pt-40 md:pt-0 lg:pt-0">
+        <section id="one" className="pt-40 md:pt-0 lg:pt-0">
           <div>
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
           </div>
