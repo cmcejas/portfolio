@@ -75,7 +75,7 @@ export default function Home() {
             <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
           </div>
 
-          <div className="px-10 lg:flex-wrap lg:flex gap-10">
+          <div className="px-7 md:px-10 lg:flex-wrap lg:flex gap-10">
 
             <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
             <Image src={education} width={250} height={250} alt="" className="mx-auto pb-3"/>
