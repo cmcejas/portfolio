@@ -18,7 +18,7 @@ import { link } from 'fs';
 
 export default function Home() {
   return (
-    <div className="bg-bgc1" id="one">
+    <div bg-color="bgc1" id="one">
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className=" invisible md:visible sm:py-3 md:py-10 lg:md:py-10 md:mb-12 lg:mb-12 flex justify-between">
