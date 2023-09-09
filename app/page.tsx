@@ -67,6 +67,8 @@ export default function Home() {
           <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
 
+          <br></br>
+
           <li className="md:invisible flex text-center mx-auto fade-in-up">
               <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" href="Resume.pdf" download>
                 <span>Resume</span>
