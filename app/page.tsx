@@ -69,7 +69,7 @@ export default function Home() {
 
           <br></br>
 
-          <li className="md:invisible flex text-center justify-center mx-auto fade-in-up">
+          <li className="md:invisible flex justify-center fade-in-up">
               <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" href="Resume.pdf" download>
                 <span>Resume</span>
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
