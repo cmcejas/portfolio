@@ -68,7 +68,7 @@ export default function Home() {
         </div>
 
           <li className="md:invisible flex justify-center fade-in-up">
-              <a className="bg-slate-700 text-xl text-white px-7 py-3 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" download>
+              <a className="bg-slate-700 text-xl text-white px-7 py-3 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" style={{ boxShadow: '0 0 23px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" download>
                 <span>My Resume</span>
                 <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
