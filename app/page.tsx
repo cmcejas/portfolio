@@ -39,7 +39,7 @@ export default function Home() {
 
             </ul>
           </nav>
-          <div className="text-center p-6 md:p-10">
+          <div className="text-center px-6 md:p-10">
             <h2 className="fade-in-up text-4xl py-2 bg-clip-text text-transparent text-white font-bold md:font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2>
             <br></br>
               <h3 className="fade-in-up text-xl py-2 md:text-3xl text-slate-300">High School Student <br></br>Computer Science Focus</h3>
