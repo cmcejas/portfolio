@@ -66,6 +66,16 @@ export default function Home() {
         <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-36 invisible lg:visible">
           <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
+
+          <li className="flex mx-auto fade-in-up">
+              <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" href="Resume.pdf" download>
+                <span>Resume</span>
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </a>
+            </li>
+          
         </section>
 
         {/* second page */}
