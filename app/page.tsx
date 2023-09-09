@@ -147,7 +147,7 @@ export default function Home() {
                 <span className=" font-extrabold"> Drexel Digital Development</span>
                 <br>
                 </br>
-                Worked alongside a team to develop <span className="font-bold"><a href="https://www.platepals.org/" target="_blank"> Plate Pals</a></span>.
+                Worked alongside a team to develop <span className="text-teal-500 font-bold"><a href="https://www.platepals.org/" target="_blank"> Plate Pals</a></span>.
               </p>
               <p className="text-gray-400 pt-4 font-bold">Many personal projects on github.</p>
 
