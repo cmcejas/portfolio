@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Created with Next.js',
   openGraph: 
     {
-      images: '../public.briefcase.png',
+      images: 'briefcase.png',
     }
 }
 
