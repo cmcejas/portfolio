@@ -6,6 +6,7 @@ import {
 } from 'react-icons/ai';
 import {BsFillArrowDownCircleFill} from 'react-icons/bs'
 import {FiExternalLink} from 'react-icons/fi'
+import Image from 'next/image';
 import coding from '../public/coding.png';
 import code from '../public/code.png';
 import education from '../public/education.png'
