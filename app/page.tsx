@@ -63,8 +63,8 @@ export default function Home() {
             </a>
           </div>
 
-          <li className="mt-20 md:mt-0 md:invisible flex justify-center fade-in-up">
-            <a className="bg-slate-700 text-xl text-white px-7 py-3 md:px-0 md:py-0 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" style={{ boxShadow: '0 0 23px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" target="_blank">
+          <li className="mt-20 md:mt-0 md:hidden flex justify-center fade-in-up">
+            <a className="bg-slate-700 text-xl text-white px-7 py-3 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" style={{ boxShadow: '0 0 23px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" target="_blank">
               <span>My Resume</span>
               <FiExternalLink className="text-2xl"/>
             </a>
