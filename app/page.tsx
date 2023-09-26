@@ -10,7 +10,6 @@ import Image from 'next/image';
 import coding from '../public/coding.png';
 import code from '../public/code.png';
 import education from '../public/education.png'
-import consulting from '../public/consulting.png';
 import os from '../public/os.png';
 import briefcase from '../public/briefcase.png';
 import languages from '../public/languages.png';
