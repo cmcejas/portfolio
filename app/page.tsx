@@ -1,4 +1,4 @@
-import Tiles from '../app/components/tiles.tsx';
+import Tiles from '../app/components/tiles';
 import {
   AiFillTwitterCircle, 
   AiFillLinkedin, 
