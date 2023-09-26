@@ -114,7 +114,7 @@ const Tiles = () => {
             <p className="text-gray-400 py-1">Club and High School Soccer</p>
             <p className="text-gray-400 py-1">Acoustic and Electric Guitar</p>
             <p className="text-gray-400 py-1">Programming personal projects</p>
-            <p className="text-gray-400 py-1">School Clubs <span className="font-bold text-teal-500">listed on resume </span></p>
+            <p className="text-gray-400 py-1">School Clubs <span className="font-bold text-teal-500 cursor-not-allowed">listed on resume </span></p>
           </div>
 
         </div>
