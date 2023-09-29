@@ -20,7 +20,7 @@ module.exports = {
         'bgc2': '#0b111f',
       },
       screens:{
-        '3ti': '1024px',
+        '3ti': '1200px',
       }
     },
   },
