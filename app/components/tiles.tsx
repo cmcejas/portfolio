@@ -17,7 +17,7 @@ const Tiles = () => {
 
         <div className="px-7 md:px-10 lg:flex-wrap lg:flex gap-10">
 
-          <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={education} width={250} height={250} alt="" className="mx-auto pb-3"/>
             <h3 className="text-lg font-medium pt-8 pb-2 text-white">
               Education
@@ -37,7 +37,7 @@ const Tiles = () => {
 
           </div>
 
-          <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={code} width={150} height={150} alt="" className="py-10 mx-auto"/>
             <h3 className="text-lg font-medium pt-9 pb-2 text-white">
               Programming Languages
@@ -55,7 +55,7 @@ const Tiles = () => {
 
           </div>
 
-          <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={os} width={218} height={250} alt="" className="mx-auto pt-3"/>
             <h3 className="text-lg font-medium pt-8 pb-2 text-white">
               Operating Systems
@@ -72,7 +72,7 @@ const Tiles = () => {
 
           </div>
 
-          <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={briefcase} width={160} height={250} alt="" className="mx-auto pt-8"/>
             <h3 className="text-lg font-medium pt-16 pb-2 text-white">
               Professional Experience
@@ -91,7 +91,7 @@ const Tiles = () => {
 
           </div>
 
-          <div className="lg:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={languages} width={210} height={250} alt="" className="mx-auto pb-3"/>
             <h3 className="text-lg font-medium pt-8 pb-2 text-white">
               Languages Spoken
@@ -106,7 +106,7 @@ const Tiles = () => {
 
           </div>
 
-          <div className="lg:w-[30%] text-center p-6 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
+          <div className="w-[100%] 3ti:w-[30%] text-center p-6 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
           <Image src={guitar} width={270} height={250} alt="" className="mx-auto pb-1"/>
             <h3 className="text-lg font-medium pb-2 text-white">
               Hobbies

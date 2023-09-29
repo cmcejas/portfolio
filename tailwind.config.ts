@@ -16,11 +16,12 @@ module.exports = {
         roboto: "roboto",
       },
       colors: {
-        'cool-orange': '#0f172a',
-        'cool-pink': '#ea6eaf',
         'bgc1': '#152844',
         'bgc2': '#0b111f',
       },
+      screens:{
+        '3ti': '1024px',
+      }
     },
   },
   plugins: [],
