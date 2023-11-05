@@ -1,15 +1,8 @@
 'use client'
  
 import { useState } from 'react'
-
 import axios from "axios";
 import { useForm } from "react-hook-form";
-
-interface FormData {
-  email: string;
-  subject: string;
-  body: string;
-}
 
 const Contact = () => {
   const {
@@ -19,7 +12,7 @@ const Contact = () => {
   } = useForm();
   const [successMessage, setSuccessMessage] = useState("");
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data) => {
     axios
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
