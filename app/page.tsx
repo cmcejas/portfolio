@@ -1,4 +1,5 @@
 import Tiles from '../app/components/tiles';
+import Contact from '../app/components/contact';
 import {
   AiFillTwitterCircle, 
   AiFillLinkedin, 
@@ -18,7 +19,7 @@ import { link } from 'fs';
 
 export default function Home() {
   return (
-    <div id="one">
+    <div className="bg-bgc2" id="one">
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className=" invisible md:visible md:py-10 md:mb-8 lg:mb-10 flex justify-between">
@@ -82,7 +83,11 @@ export default function Home() {
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
       </main>
+
+      <Contact />
+
     </div>
   )
 }

@@ -15,6 +15,9 @@ module.exports = {
         poppins: "poppins",
         roboto: "roboto",
       },
+      fontWeight: {
+        black: '900',
+      },
       colors: {
         'bgc1': '#152844',
         'bgc2': '#0b111f',
