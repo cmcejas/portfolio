@@ -23,7 +23,7 @@ const Contact = () => {
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
         setSuccessMessage(
-          `Thanks for signing up! Check your inbox for updates 😊`
+          `Thanks for the message! Check your inbox for a response soon!`
         );
       })
       .catch((e) => console.error(e));
