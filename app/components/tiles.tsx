@@ -9,7 +9,7 @@ import guitar from 'public/guitar.png';
 const Tiles = () => {
     return(
 
-        <section id="two" className="pt-40 md:pt-0 lg:pt-0">
+        <section id="two" className="pt-30 md:pt-0 lg:pt-0">
         <br className="invisible md:visible"></br>
         <div>
           <h3 className="text-5xl py-1 text-white font-bold">About Me</h3>
