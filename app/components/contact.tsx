@@ -32,8 +32,9 @@ const Contact = () => {
 
   return (
     <div id="three" className="m-auto w-3/4 md:w-1/4 bg-bgc2 text-white text-lg">
-        <h2 className="inline-block text-center text-transparent bg-clip-text cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-500 max-w-sm px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 text-4xl md:py-2 font-black md:font-bold font-poppins sm:text-4xl md:text-6xl">
-            <a href="#three">Contact Me</a>
+      
+        <h2 className="flex justify-center items-center text-transparent bg-clip-text cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-500 px-4 py-2 rounded-md hover:transform hover:-translate-y-1 transition-transform duration-300 md:py-2 font-black md:font-bold font-poppins text-4xl lg:text-6xl">
+          <a href="#three">Contact Me</a>
         </h2>
 
         <br></br><br></br><br></br><br></br>
