@@ -67,7 +67,7 @@ const Tiles = () => {
             <p className="text-gray-400 py-1">Ubuntu based distributions</p>
             <p className="text-gray-400 py-1">Arch based distributions</p>
             <p className="text-gray-400 py-1">Debian based distributions</p>
-            <p className="text-gray-400 py-1">Mac OS</p>
+            <p className="text-gray-400 py-1">Apple Mac OS</p>
 
 
           </div>
