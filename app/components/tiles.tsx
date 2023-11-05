@@ -63,7 +63,7 @@ const Tiles = () => {
 
             <h4 className="py-2 text-teal-500">In order from most to least used.</h4>
             
-            <p className="text-gray-400 py-1">Windows</p>
+            <p className="text-gray-400 py-1">Windows Vista/7/10/11</p>
             <p className="text-gray-400 py-1">Ubuntu based distributions</p>
             <p className="text-gray-400 py-1">Arch based distributions</p>
             <p className="text-gray-400 py-1">Debian based distributions</p>
