@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="three" className="px-2 m-auto sm:max-w-screen md:w-1/4 bg-bgc2 text-white text-lg">
+    <div id="three" className="px-2 m-auto w-3/4 md:w-1/4 bg-bgc2 text-white text-lg">
         <h2 className="inline-block text-center text-transparent bg-clip-text cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-500 max-w-sm px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 text-4xl md:py-2 font-black md:font-bold font-poppins sm:text-4xl md:text-6xl">
             <a href="#three">Contact Me</a>
         </h2>
@@ -39,7 +39,7 @@ const Contact = () => {
 
         <form className="md:text-left text-center" onSubmit={handleSubmit(onSubmit)}>
 
-        <p>Email Address</p>
+        <p className="text-left">Email Address</p>
         <input placeholder="Enter your email here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("email")}
             type="email"
@@ -47,7 +47,7 @@ const Contact = () => {
 
         <br></br><br></br>
 
-        <p>Subject</p>
+        <p className="text-left">Subject</p>
         <input placeholder="Enter your title here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-32 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inherit focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("subject")}
             type="subject"
@@ -55,7 +55,7 @@ const Contact = () => {
 
         <br></br><br></br>
 
-        <p>Body Text</p>
+        <p className="text-left">Body Text</p>
         <input placeholder="Enter your body text here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-32 py-40 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("body")}
             type="body"
@@ -63,12 +63,14 @@ const Contact = () => {
 
         <br></br><br></br>
 
-        <button className="text-md hover:transform hover:-translate-y-1 transition-transform duration-300 py-0.5 px-3 rounded-md cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-600" type="submit" disabled={isSubmitting}>
+        <button className="float-left text-md hover:transform hover:-translate-y-1 transition-transform duration-300 py-0.5 px-3 rounded-md cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-600" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Submitting" : "Submit"}
         </button>
+        <br></br><br></br>
         {successMessage && <p>{successMessage}</p>}
         </form>
 
+        <br></br>
         <br></br>
 
     </div>
