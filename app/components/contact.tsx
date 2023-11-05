@@ -31,7 +31,7 @@ const Contact = () => {
 
   return (
     <div id="three" className="px-2 m-auto sm:max-w-screen md:w-1/4 bg-bgc2 text-white text-lg">
-        <h2 className="inline-block text-center text-transparent bg-clip-text cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-500 max-w-sm px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 text-4xl md:py-2 font-black md:font-bold font-poppins md:text-6xl">
+        <h2 className="inline-block text-center text-transparent bg-clip-text cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-500 max-w-sm px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 text-4xl md:py-2 font-black md:font-bold font-poppins sm:text-4xl md:text-6xl">
             <a href="#three">Contact Me</a>
         </h2>
 
@@ -63,7 +63,7 @@ const Contact = () => {
 
         <br></br><br></br>
 
-        <button type="submit" disabled={isSubmitting}>
+        <button className="text-md hover:transform hover:-translate-y-1 transition-transform duration-300 py-0.5 px-3 rounded-md cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-600" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Submitting" : "Submit"}
         </button>
         {successMessage && <p>{successMessage}</p>}
