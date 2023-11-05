@@ -1,18 +1,22 @@
-'use client'
- 
 import { useState } from 'react'
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+interface FormData {
+  email: string;
+  subject: string;
+  body: string;
+}
 
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm();
+  } = useForm<FormData>();
   const [successMessage, setSuccessMessage] = useState("");
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     axios
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
