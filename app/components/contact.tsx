@@ -5,6 +5,12 @@ import { useState } from 'react'
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
+interface FormData {
+  email: string;
+  subject: string;
+  body: string;
+}
+
 const Contact = () => {
   const {
     register,
@@ -13,7 +19,7 @@ const Contact = () => {
   } = useForm();
   const [successMessage, setSuccessMessage] = useState("");
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     axios
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
