@@ -37,7 +37,7 @@ const Contact = () => {
 
         <br></br><br></br><br></br><br></br>
 
-        <form className="text-left" onSubmit={handleSubmit(onSubmit)}>
+        <form className="md:text-left text-center" onSubmit={handleSubmit(onSubmit)}>
 
         <p>Email Address</p>
         <input placeholder="Enter your email here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
@@ -48,7 +48,7 @@ const Contact = () => {
         <br></br><br></br>
 
         <p>Subject</p>
-        <input placeholder="Enter your title here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-32 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
+        <input placeholder="Enter your title here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 md:px-32 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inherit focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("subject")}
             type="subject"
         />
