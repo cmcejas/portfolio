@@ -41,9 +41,8 @@ const Contact = () => {
         <form className="md:text-left text-center" onSubmit={handleSubmit(onSubmit)}>
 
         <p className="lg:text-left">Email Address</p>
-        <input placeholder="Enter your email here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[250px] h-[32px] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
+        <textarea placeholder="Enter your email here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[250px] h-[32px] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("email")}
-            type="email"
         />
 
         <br></br><br></br>
@@ -51,7 +50,6 @@ const Contact = () => {
         <p className="lg:text-left">Subject</p>
         <textarea placeholder="Enter your title here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[450px] h-[32px] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inherit focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("subject")}
-            type="subject"
         />
 
         <br></br><br></br>
@@ -59,7 +57,6 @@ const Contact = () => {
         <p className="lg:text-left">Body Text</p>
         <textarea placeholder="Enter your body text here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-2 md:w-[450px] h-[400px] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("body")}
-            type="body"
         />
 
         <br></br><br></br>
