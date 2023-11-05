@@ -46,13 +46,15 @@ export default function Home() {
           <div className="text-center px-6 md:p-10">
             <h2 className="fade-in-up text-4xl md:py-2 bg-clip-text text-transparent text-white font-bold md:font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2>
             <br></br>
-              <h3 className="fade-in-up text-xl md:py-2 md:text-3xl text-teal-400">
-                <Typewriter
+              <h3 className="fade-in-up text-xl md:py-2 md:text-3xl text-slate-300">
+                <p className="text-teal-400"><Typewriter
                   options={{
                     strings: ['High School Student', 'Bot Programmer', 'Web-App Developer', 'DECA Member', 'NHS Member', 'YAG Member', 'World Language Club Officer' ,'Jazz Band Guitarist', 'Club and High School Soccer Player'],
                     autoStart: true,
                     loop: true,
-                  }}/>Computer Science Focus</h3>
+                  }}/></p>
+                Computer Science Focus
+              </h3>
             <p className="fade-in-up text-md text-balance py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
