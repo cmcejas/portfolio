@@ -39,8 +39,6 @@ export default function Home() {
               </a>
             </li>
 
-
-
             </ul>
           </nav>
           <div className="text-center px-6 md:p-10">
