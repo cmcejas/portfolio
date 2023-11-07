@@ -26,7 +26,7 @@ const Contact = () => {
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
         setSuccessMessage(
-          `Thanks for the message! Check your inbox for a confirmation before submitting another one.`
+          `Your message has been sent! Check your inbox for a confirmation before submitting another one.`
         );
         toast.success("Form submitted successfully!", {
           position: "top-right",
