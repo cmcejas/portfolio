@@ -17,6 +17,7 @@ const Contact = () => {
     register,
     handleSubmit,
     formState: { isSubmitting },
+    reset, // Add this line
   } = useForm<FormData>();
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -25,7 +26,8 @@ const Contact = () => {
       .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
         setSuccessMessage(
-          `Thanks for the message! Check your inbox for a confirmation before submitting another one.`);
+          `Thanks for the message! Check your inbox for a confirmation before submitting another one.`
+        );
         toast.success("Form submitted successfully!", {
           position: "top-right",
           autoClose: 5000,
@@ -35,8 +37,8 @@ const Contact = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          }); // Display a success toast
-        window.location.href = "#one";
+        }); // Display a success toast
+        reset(); // Reset the form
       })
       .catch((e) => console.error(e));
   };
