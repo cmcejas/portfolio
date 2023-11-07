@@ -22,7 +22,7 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     axios
-      .post("", data)
+      .post("https://eoiwigmaejhiwu7.m.pipedream.net", data)
       .then((response) => {
         setSuccessMessage(
           `Thanks for the message! Check your inbox for a confirmation before submitting another one.`);
