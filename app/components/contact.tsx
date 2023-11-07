@@ -72,7 +72,7 @@ const Contact = () => {
             {...register("body")}
         />
 
-        <br></br><br></br>
+        <br></br>
 
         <button className="text-md hover:transform hover:-translate-y-1 transition-transform duration-300 py-0.5 px-3 rounded-md cursor-pointer bg-gradient-to-tl from-teal-200 to-teal-600" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Submitting" : "Submit"}
