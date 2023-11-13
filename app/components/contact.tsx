@@ -17,7 +17,7 @@ const Contact = () => {
     register,
     handleSubmit,
     formState: { isSubmitting },
-    reset, // Add this line
+    reset,
   } = useForm<FormData>();
   const [successMessage, setSuccessMessage] = useState("");
 
