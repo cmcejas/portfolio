@@ -50,7 +50,7 @@ const Contact = () => {
         <a href="#three">Contact Me</a>
       </h2>
 
-      <br></br><br></br><br></br><br></br>
+      <br></br><br></br><br></br>
 
       <form className="md:text-left text-center flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <p className="text-left">Email Address</p>
