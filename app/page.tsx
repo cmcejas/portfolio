@@ -28,7 +28,7 @@ export default function Home() {
       <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className=" invisible md:visible md:py-10 md:mb-8 lg:mb-10 flex justify-between">
-            <h1 className="fade-in-up text-xl text-white">Developed by cmcejas</h1>
+            <h1 className="fade-in-up text-xl text-white">developed by cmcejas</h1>
 
             <ul className="flex items-center">
 
