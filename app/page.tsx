@@ -1,7 +1,5 @@
 'use client'
 
-// test
-
 import Tiles from '../app/components/tiles';
 import Contact from '../app/components/contact';
 import {
