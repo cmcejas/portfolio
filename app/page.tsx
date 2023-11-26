@@ -45,14 +45,14 @@ export default function Home() {
             <h2 className="fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos <span className="hidden md:inline">Manuel</span> <span className="font-bold">Cejas</span></h2>
             <br></br>
               <h3 className="fade-in-up text-xl md:py-2 md:text-3xl text-slate-300">
-                <p className="text-teal-300">
+                <div className="text-teal-300">
                   <Typewriter
                     options={{
                       strings: ['High School Student', 'Bot Programmer', 'Web-App Developer', 'DECA Member', 'NHS Ambassador', 'YAG Member', 'World Language Club Officer' ,'Jazz Band Guitarist', 'Club and HS Soccer Player'],
                       autoStart: true,
                       loop: true,
                     }}/>
-                  </p>
+                  </div>
                 Computer Science Focus
               </h3>
             <p className="fade-in-up text-md text-balance py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
