@@ -42,7 +42,7 @@ export default function Home() {
             </ul>
           </nav>
           <div className="text-center px-6 md:p-10">
-            <h2 className="fade-in-up text-5xl md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos  Cejas</h2>
+            <h2 className="fade-in-up text-4xl md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2>
             <br></br>
               <h3 className="fade-in-up text-xl md:py-2 md:text-3xl text-slate-300">
                 <p className="text-teal-300">
