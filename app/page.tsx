@@ -25,15 +25,15 @@ import Typewriter from 'typewriter-effect';
 export default function Home() {
   return (
     <div className="bg-bgc2" id="one">
-      <main className=" bg-gradient-to-b from-bgc1 to-bgc2 px-2 md:px-20 lg:px-40">
+      <main className="px-2 bg-gradient-to-b from-bgc1 to-bgc2 md:px-20 lg:px-40">
         <section className="min-h-screen">
-          <nav className=" invisible md:visible md:py-10 md:mb-8 lg:mb-10 flex justify-between">
-            <h1 className="fade-in-up text-xl text-white">developed by cmcejas</h1>
+          <nav className="flex justify-between invisible md:visible md:py-10 md:mb-8 lg:mb-10">
+            <h1 className="text-xl text-white fade-in-up">developed by cmcejas</h1>
 
             <ul className="flex items-center">
 
             <li className="fade-in-up">
-              <a className="bg-slate-700 text-white px-4 py-2 rounded-md ml-8 hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" href="Resume.pdf" target="_blank">
+              <a className="flex items-center px-4 py-2 ml-8 space-x-2 text-white transition-transform duration-300 rounded-md bg-slate-700 hover:transform hover:-translate-y-1" href="Resume.pdf" target="_blank">
                 <span>My Resume</span>
                 <FiExternalLink className="text-2xl"/>
               </a>
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="px-6 md:p-10">
             <h2 className=" text-center fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos <span className="hidden md:inline">Manuel</span> <span className="font-bold">Cejas</span></h2>
             <br></br>
-              <h3 className="text-center fade-in-up text-2xl md:py-2 md:text-3xl text-slate-300">
+              <h3 className="text-2xl text-center fade-in-up md:py-2 md:text-3xl text-slate-300">
                 <div className="text-teal-300">
                   <Typewriter
                     options={{
@@ -55,35 +55,35 @@ export default function Home() {
                   </div>
                 Computer Science Focus
               </h3>
-            <p className="md:text-center fade-in-up text-lg py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
+            <p className="max-w-2xl py-5 mx-auto text-lg leading-8 text-gray-400 md:text-center fade-in-up md:text-xl md:pt-8">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
             I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
             </p>
           </div>
-          <div className="fade-in-up text-5xl flex justify-center gap-12 md:gap-16 pt-3 text-slate-700">
+          <div className="flex justify-center gap-12 pt-3 text-5xl fade-in-up md:gap-16 text-slate-700">
             <a target="_blank" href="https://github.com/cmcejas">
-              <AiFillGithub className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
+              <AiFillGithub className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://www.linkedin.com/in/cmcejas/">
-              <AiFillLinkedin href="" className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
+              <AiFillLinkedin href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://x.com/cmcejas">
-              <AiFillTwitterCircle href="" className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
+              <AiFillTwitterCircle href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://www.instagram.com/cmcejas_/">
-              <AiFillInstagram href="" className="cursor-pointer hover:rotate-6 hover:text-6xl duration-200 ease-in-out"/>
+              <AiFillInstagram href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
           </div>
 
-          <li className="mt-20 md:mt-0 md:hidden flex justify-center fade-in-up">
-            <a className="bg-slate-700 text-xl text-white px-7 py-3 rounded-lg hover:transform hover:-translate-y-1 transition-transform duration-300 flex items-center space-x-2" style={{ boxShadow: '0 0 23px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" target="_blank">
+          <li className="flex justify-center mt-20 md:mt-0 md:hidden fade-in-up">
+            <a className="flex items-center py-3 space-x-2 text-xl text-white transition-transform duration-300 rounded-lg bg-slate-700 px-7 hover:transform hover:-translate-y-1" style={{ boxShadow: '0 0 23px rgba(200, 200, 200, 0.2)' }} href="Resume.pdf" target="_blank">
               <span>My Resume</span>
               <FiExternalLink className="text-2xl"/>
             </a>
           </li>
           
-        <div className="flex justify-center fade-in-up text-slate-400 text-4xl pt-28 invisible lg:visible">
+        <div className="flex justify-center invisible text-4xl fade-in-up text-slate-400 pt-28 lg:visible">
           <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
           
