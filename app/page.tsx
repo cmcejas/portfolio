@@ -55,7 +55,7 @@ export default function Home() {
                   </div>
                 Computer Science Focus
               </h3>
-            <p className="fade-in-up text-md text-balance py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
+            <p className="fade-in-up text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
             I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
