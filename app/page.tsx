@@ -41,10 +41,10 @@ export default function Home() {
 
             </ul>
           </nav>
-          <div className="text-center px-6 md:p-10">
-            <h2 className="fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos <span className="hidden md:inline">Manuel</span> <span className="font-bold">Cejas</span></h2>
+          <div className="px-6 md:p-10">
+            <h2 className=" text-center fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos <span className="hidden md:inline">Manuel</span> <span className="font-bold">Cejas</span></h2>
             <br></br>
-              <h3 className="fade-in-up text-xl md:py-2 md:text-3xl text-slate-300">
+              <h3 className="text-center fade-in-up text-2xl md:py-2 md:text-3xl text-slate-300">
                 <div className="text-teal-300">
                   <Typewriter
                     options={{
@@ -55,7 +55,7 @@ export default function Home() {
                   </div>
                 Computer Science Focus
               </h3>
-            <p className="fade-in-up text-md py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
+            <p className="md:text-center fade-in-up text-lg py-5 leading-8 text-gray-400 md:text-xl md:pt-8 max-w-2xl mx-auto">
             I am a high school student focused on computer science. 
             My interest began at a young age as I started to program in Python since I was 8 years old. 
             I am always learning more in the computer science field and am excited to create new groundbreaking projects. 
