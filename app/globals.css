@@ -73,3 +73,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.balanced {
+ text-wrap: balance;
+}
