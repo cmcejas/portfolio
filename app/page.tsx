@@ -41,10 +41,10 @@ export default function Home() {
 
             </ul>
           </nav>
-          <div className="px-6 md:p-10">
-            <h2 className=" text-center fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos <span className="hidden md:inline">Manuel</span> <span className="font-bold">Cejas</span></h2>
+          <div className="px-6 md:p-6">
+            <h2 className=" md:text-center fade-in-up text-[47px] md:py-2 bg-clip-text text-transparent text-white font-extrabold md:font-medium font-poppins md:text-6xl">Carlos Manuel <span className="font-bold">Cejas</span></h2>
             <br></br>
-              <h3 className="text-2xl text-center fade-in-up md:py-2 md:text-3xl text-slate-300">
+              <h3 className="text-2xl md:text-center fade-in-up md:py-2 md:text-3xl text-slate-300">
                 <div className="text-teal-300">
                   <Typewriter
                     options={{
@@ -83,7 +83,7 @@ export default function Home() {
             </a>
           </li>
           
-        <div className="flex justify-center invisible text-4xl fade-in-up text-slate-400 pt-28 lg:visible">
+        <div className="flex justify-center invisible text-4xl fade-in-up text-slate-400 pt-20 lg:visible">
           <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
           
