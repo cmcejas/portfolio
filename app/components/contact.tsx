@@ -44,15 +44,15 @@ const Contact = () => {
   };
 
   return (
-    <div id="three" className="w-3/4 m-auto text-lg text-white md:w-1/4 bg-bgc2">
+    <div id="three" className=" w-3/4 m-auto text-lg text-white flex flex-col bg-bgc2">
       <ToastContainer />
-      <h2 className="flex items-center justify-center px-4 py-2 text-4xl font-black text-transparent transition-transform duration-300 rounded-md cursor-pointer bg-clip-text bg-gradient-to-tl from-teal-200 to-teal-500 hover:transform hover:-translate-y-1 md:py-2 md:font-bold font-poppins lg:text-6xl">
+      <h2 className="flex items-center justify-center text-5xl font-black text-transparent transition-transform duration-300 rounded-md cursor-pointer bg-clip-text bg-gradient-to-tl from-teal-200 to-teal-500 hover:transform hover:-translate-y-1 md:py-2 md:font-bold font-poppins lg:text-6xl">
         <a href="#three">Contact Me</a>
       </h2>
 
-      <br></br><br></br><br></br>
+      <br></br><br></br>
 
-      <form className="flex flex-col text-center md:text-left" onSubmit={handleSubmit(onSubmit)}>
+      <form className=" md:mx-auto flex flex-col text-center md:text-left" onSubmit={handleSubmit(onSubmit)}>
         <p className="text-left">Email Address</p>
         <textarea placeholder="Enter your email here" className="placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[250px] h-[32px] text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-white-300 sm:text-sm sm:leading-6 text-black"
             {...register("email")}
