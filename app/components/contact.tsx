@@ -54,14 +54,14 @@ const Contact = () => {
 
       <form className=" md:mx-auto flex flex-col text-center md:text-left" onSubmit={handleSubmit(onSubmit)}>
         <p className="text-left">Email Address</p>
-        <textarea placeholder="Enter your email here" className="outline-none resize-none bg-slate-800 placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[250px] h-[36px] md:h-[34px] text-slate-300 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 text-black"
+        <textarea placeholder="Enter your email here" className="outline-none resize-none bg-slate-800 placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[250px] h-[36px] text-slate-300 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 text-black"
             {...register("email")}
         />
 
         <br></br>
 
         <p className="text-left">Subject</p>
-        <textarea placeholder="Enter your title here" className="outline-none resize-none bg-slate-800 placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[450px] h-[36px] md:h-[34px] text-slate-300 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 text-black"
+        <textarea placeholder="Enter your title here" className="outline-none resize-none bg-slate-800 placeholder:italic placeholder:text-slate-400 rounded-md border-0 px-2 py-1 md:w-[450px] h-[36px] text-slate-300 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 text-black"
             {...register("subject")}
         />
 
