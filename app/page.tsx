@@ -48,7 +48,7 @@ export default function Home() {
                 <div className="text-teal-300">
                   <Typewriter
                     options={{
-                      strings: ['High School Student', 'Bot Programmer', 'Web-App Developer', 'DECA Member', 'NHS Ambassador', 'YAG Member', 'World Language Club Officer' ,'Jazz Band Guitarist', 'Club and HS Soccer Player'],
+                      strings: ['High School Student', 'Bot Programmer', 'Web-App Developer', 'DECA Member', 'NHS Ambassador', 'YAG Treasurer', 'World Language Club Officer' ,'Jazz Band Guitarist', 'Club and HS Soccer Player'],
                       autoStart: true,
                       loop: true,
                     }}/>
