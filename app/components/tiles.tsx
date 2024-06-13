@@ -29,7 +29,7 @@ const Tiles = () => {
             
             <p className="py-1 text-gray-400">Programming I (Python)</p>
             <p className="py-1 text-gray-400">AP Computer Science A (Java)</p>
-            <p className="py-1 text-gray-400">AP Calc AB</p>
+            <p className="py-1 text-gray-400">AP Calc AB/BC</p>
             <p className="py-1 text-gray-400">Trig/Pre-Calc Honors</p>
             <p className="py-1 text-gray-400">Algebra II Honors</p>
             <p className="py-1 text-gray-400">Engineering Design IS</p>
