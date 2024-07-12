@@ -81,10 +81,10 @@ const Tiles = () => {
             <h4 className="py-2 text-teal-500">More Information on Resume.</h4>
             
             <p className="py-1 text-gray-400">
-              <span className="font-extrabold "> Drexel Digital Development</span>
+              <span className="font-extrabold "> Web Developer at SmartPark</span>
               <br>
               </br>
-              Worked alongside a team to develop <span className="font-bold text-teal-500 underline"><a href="https://www.platepals.org/" target="_blank"> Plate Pals</a></span>.
+              I work alongside a team to develop the <span className="font-bold text-teal-500 underline"><a href="https://trysmartpark.com/" target="_blank">website</a></span>.
             </p>
             <p className="pt-4 font-bold text-gray-400">Many personal projects on github.</p>
 
