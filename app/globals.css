@@ -13,6 +13,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+::selection {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
