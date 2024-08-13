@@ -86,7 +86,7 @@ const Tiles = () => {
               </br>
               I work alongside a team to develop the <span className="font-bold text-teal-500 underline"><a href="https://parkt.app/" target="_blank">website</a></span>.
             </p>
-            <p className="pt-4 font-bold text-gray-400">Many personal projects on github.</p>
+            <p className="pt-4 font-bold text-gray-400">Many projects on github.</p>
 
 
           </div>
