@@ -70,7 +70,7 @@ export default function Home() {
               <AiFillLinkedin href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://x.com/cmcejas">
-              <FaSquareXTwitter href="" className="pt-1 duration-200 ease-in-out cursor-pointer hover:rotate-6"/>
+              <FaSquareXTwitter href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6"/>
             </a>
             <a target="_blank" href="https://www.instagram.com/cmcejas_/">
               <AiFillInstagram href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
