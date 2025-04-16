@@ -70,7 +70,7 @@ export default function Home() {
               <AiFillLinkedin href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://x.com/cmcejas">
-              <FaSquareXTwitter href="" className="text-[44px] duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
+              <FaSquareXTwitter href="" className="text-[44px] pt-3 duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-[52px]"/>
             </a>
             <a target="_blank" href="https://www.instagram.com/cmcejas_/">
               <AiFillInstagram href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
@@ -85,7 +85,7 @@ export default function Home() {
           </li>
           
         <div className="flex justify-center invisible text-4xl fade-in-up text-slate-400 pt-20 lg:visible">
-          <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
+            <a href="#two"><BsFillArrowDownCircleFill className="animate-bounce" /></a>
         </div>
           
         </section>
