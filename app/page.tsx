@@ -8,6 +8,7 @@ import {
   AiFillGithub, 
   AiFillInstagram
 } from 'react-icons/ai';
+import { FaSquareXTwitter } from "react-icons/fa6";
 import {BsFillArrowDownCircleFill} from 'react-icons/bs'
 import {FiExternalLink} from 'react-icons/fi'
 import Image from 'next/image';
@@ -69,7 +70,7 @@ export default function Home() {
               <AiFillLinkedin href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://x.com/cmcejas">
-              <AiFillTwitterCircle href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
+              <FaSquareXTwitter href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
             </a>
             <a target="_blank" href="https://www.instagram.com/cmcejas_/">
               <AiFillInstagram href="" className="duration-200 ease-in-out cursor-pointer hover:rotate-6 hover:text-6xl"/>
