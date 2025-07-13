@@ -36,7 +36,9 @@ const Tiles = () => {
             </a>
           </h4>
 
-          <p className="py-1 text-gray-400">On the 5 year masters program</p>
+          <p className="py-1 text-gray-400">
+            CS Student at Trinity College Dublin (BSc/MSc)
+          </p>
         </div>
 
         <div
