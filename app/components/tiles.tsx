@@ -120,7 +120,7 @@ const Tiles = () => {
             .
           </p>
           <p className="pt-4 font-bold text-gray-400">
-            Many projects on  <span className="underline"> <a href="https://github.com" target="_blank"> github </a> </span> .
+            Many projects on  <span className="underline"> <a href="https://github.com" target="_blank">github</a></span>.
           </p>
         </div>
 
