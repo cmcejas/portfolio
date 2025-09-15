@@ -111,7 +111,7 @@ const Tiles = () => {
 
           <p className="py-1 text-gray-400">
             <span className="font-extrabold "> Web Developer at Parkt</span>
-            <br></br>I work alongside a team to develop the{" "}
+            <br></br>I worked alongside a team to develop the{" "}
             <span className="font-bold text-teal-500 underline">
               <a href="https://parkt.app/" target="_blank">
                 website
@@ -120,7 +120,7 @@ const Tiles = () => {
             .
           </p>
           <p className="pt-4 font-bold text-gray-400">
-            Many projects on github.
+            Many projects on  <span className="underline"> <a href="https://github.com" target="_blank"> github </a> </span> .
           </p>
         </div>
 
