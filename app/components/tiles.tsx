@@ -5,7 +5,7 @@ import os from "public/os.png";
 import briefcase from "public/briefcase.png";
 import languages from "public/languages.png";
 import guitar from "public/guitar.png";
- 
+
 const Tiles = () => {
   return (
     <section id="two" className="pt-30 md:pt-0 lg:pt-0">
