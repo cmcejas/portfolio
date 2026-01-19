@@ -57,12 +57,12 @@ const Contact = () => {
         <a href="#three">Contact Me</a>
       </h2>
       
-      <div className="mt-8 mb-8">
+      <div className="mt-8 mb-8 flex justify-center">
         <form 
-          className="md:mx-auto flex flex-col text-center md:text-left" 
+          className="flex flex-col w-full md:w-auto" 
           onSubmit={handleSubmit(onSubmit)}
         >
-          <label className="text-left mb-1">Email Address</label>
+          <label className="text-left mb-1 block">Email Address</label>
           <input 
             type="email"
             placeholder="Enter your email here" 
@@ -79,7 +79,7 @@ const Contact = () => {
             <span className="text-red-400 text-sm mt-1 text-left">{errors.email.message}</span>
           )}
           
-          <label className="text-left mb-1 mt-4">Subject</label>
+          <label className="text-left mb-1 mt-4 block">Subject</label>
           <input
             type="text"
             placeholder="Enter your subject here" 
@@ -90,7 +90,7 @@ const Contact = () => {
             <span className="text-red-400 text-sm mt-1 text-left">{errors.subject.message}</span>
           )}
           
-          <label className="text-left mb-1 mt-4">Body Text</label>
+          <label className="text-left mb-1 mt-4 block">Body Text</label>
           <textarea 
             placeholder="Enter your message here" 
             className="outline-none resize-none bg-slate-800 placeholder:italic placeholder:text-slate-400 rounded-lg border-0 px-2 py-2 md:w-[450px] h-[300px] text-slate-300 shadow-sm sm:text-sm sm:leading-6"
