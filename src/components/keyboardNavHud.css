@@ -1,0 +1,350 @@
+/* Desktop keyboard navigation hint — theme syncs to active slide */
+.keyboard-nav-hud {
+  display: none;
+  position: fixed;
+  z-index: 9998;
+  bottom: max(1.1rem, env(safe-area-inset-bottom, 0px));
+  right: max(1.1rem, env(safe-area-inset-right, 0px));
+  width: min(11.5rem, calc(100vw - 2rem));
+  padding: 0.65rem 0.75rem 0.7rem;
+  font-family: var(--sol-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  /* Theme tokens (overridden per slide) */
+  --hud-accent: var(--accent);
+  --hud-label: var(--accent);
+  --hud-muted: var(--text-muted);
+  --hud-hint: var(--text-muted);
+  --hud-border: color-mix(in srgb, var(--accent) 35%, var(--border));
+  --hud-bracket: var(--accent);
+  --hud-panel-a: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
+  --hud-panel-b: color-mix(in srgb, var(--bg) 88%, transparent);
+  --hud-kbd-fg: var(--text);
+  --hud-kbd-bg: color-mix(in srgb, var(--bg-elevated) 70%, var(--bg));
+  --hud-kbd-border: var(--border);
+  --hud-kbd-shadow: color-mix(in srgb, var(--border) 80%, transparent);
+  --hud-hub: var(--accent);
+  --hud-dismiss: var(--text-muted);
+  --hud-glow: color-mix(in srgb, var(--accent) 12%, transparent);
+  --hud-pulse-mid-border: color-mix(in srgb, var(--accent) 55%, var(--border));
+  --hud-pulse-mid-glow: color-mix(in srgb, var(--accent) 12%, transparent);
+  --hud-outer-glow: rgba(0, 0, 0, 0.12);
+
+  color: var(--hud-muted);
+  background: linear-gradient(135deg, var(--hud-panel-a) 0%, var(--hud-panel-b) 100%);
+  border: 1px solid var(--hud-border);
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--hud-kbd-bg) 40%, transparent),
+    0 12px 40px var(--hud-outer-glow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: auto;
+  isolation: isolate;
+  transition:
+    border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* —— Project slide palettes (match projectSlides.css) —— */
+.keyboard-nav-hud--mars {
+  --hud-accent: #ffc9a8;
+  --hud-label: #ffb090;
+  --hud-muted: rgba(232, 224, 214, 0.72);
+  --hud-hint: rgba(232, 224, 214, 0.55);
+  --hud-border: rgba(255, 180, 144, 0.4);
+  --hud-bracket: #ffc9a8;
+  --hud-panel-a: rgba(18, 6, 10, 0.92);
+  --hud-panel-b: rgba(6, 2, 4, 0.9);
+  --hud-kbd-fg: #f5f0e8;
+  --hud-kbd-bg: rgba(0, 0, 0, 0.38);
+  --hud-kbd-border: rgba(255, 201, 168, 0.35);
+  --hud-kbd-shadow: rgba(0, 0, 0, 0.45);
+  --hud-hub: #ffc9a8;
+  --hud-dismiss: rgba(245, 240, 232, 0.55);
+  --hud-glow: rgba(255, 180, 144, 0.2);
+  --hud-pulse-mid-border: rgba(255, 201, 168, 0.75);
+  --hud-pulse-mid-glow: rgba(255, 160, 120, 0.22);
+  --hud-outer-glow: rgba(0, 0, 0, 0.55);
+}
+
+.keyboard-nav-hud--blackout {
+  --hud-accent: #00e5ff;
+  --hud-label: #00e5ff;
+  --hud-muted: rgba(180, 180, 180, 0.85);
+  --hud-hint: rgba(140, 140, 140, 0.9);
+  --hud-border: rgba(0, 229, 255, 0.38);
+  --hud-bracket: #00e5ff;
+  --hud-panel-a: rgba(4, 4, 6, 0.94);
+  --hud-panel-b: rgba(0, 0, 0, 0.92);
+  --hud-kbd-fg: #e8e8e8;
+  --hud-kbd-bg: rgba(20, 20, 24, 0.85);
+  --hud-kbd-border: rgba(0, 229, 255, 0.32);
+  --hud-kbd-shadow: rgba(255, 0, 229, 0.12);
+  --hud-hub: #ff00e5;
+  --hud-dismiss: rgba(160, 160, 160, 0.7);
+  --hud-glow: rgba(0, 229, 255, 0.18);
+  --hud-pulse-mid-border: rgba(0, 229, 255, 0.85);
+  --hud-pulse-mid-glow: rgba(255, 0, 229, 0.15);
+  --hud-outer-glow: rgba(0, 229, 255, 0.08);
+}
+
+.keyboard-nav-hud--dungeon {
+  --hud-accent: #8b9eff;
+  --hud-label: #9aa8ff;
+  --hud-muted: rgba(200, 205, 220, 0.75);
+  --hud-hint: rgba(170, 178, 200, 0.8);
+  --hud-border: rgba(100, 125, 229, 0.45);
+  --hud-bracket: #647de5;
+  --hud-panel-a: rgba(22, 22, 28, 0.94);
+  --hud-panel-b: rgba(12, 12, 16, 0.92);
+  --hud-kbd-fg: #f0f0f0;
+  --hud-kbd-bg: rgba(30, 30, 36, 0.88);
+  --hud-kbd-border: rgba(100, 125, 229, 0.4);
+  --hud-kbd-shadow: rgba(0, 188, 212, 0.1);
+  --hud-hub: #647de5;
+  --hud-dismiss: rgba(180, 186, 210, 0.65);
+  --hud-glow: rgba(100, 125, 229, 0.2);
+  --hud-pulse-mid-border: rgba(139, 158, 255, 0.9);
+  --hud-pulse-mid-glow: rgba(100, 125, 229, 0.25);
+  --hud-outer-glow: rgba(0, 0, 0, 0.5);
+}
+
+.keyboard-nav-hud--pollen {
+  --hud-accent: #f5a623;
+  --hud-label: #ffcc02;
+  --hud-muted: rgba(200, 192, 180, 0.8);
+  --hud-hint: rgba(168, 160, 148, 0.85);
+  --hud-border: rgba(245, 166, 35, 0.42);
+  --hud-bracket: #f5a623;
+  --hud-panel-a: rgba(24, 24, 26, 0.93);
+  --hud-panel-b: rgba(14, 13, 12, 0.91);
+  --hud-kbd-fg: #f5f0e8;
+  --hud-kbd-bg: rgba(0, 0, 0, 0.35);
+  --hud-kbd-border: rgba(245, 166, 35, 0.38);
+  --hud-kbd-shadow: rgba(255, 204, 2, 0.08);
+  --hud-hub: #f5a623;
+  --hud-dismiss: rgba(200, 192, 180, 0.6);
+  --hud-glow: rgba(245, 166, 35, 0.22);
+  --hud-pulse-mid-border: rgba(255, 204, 2, 0.75);
+  --hud-pulse-mid-glow: rgba(245, 166, 35, 0.2);
+  --hud-outer-glow: rgba(0, 0, 0, 0.48);
+}
+
+.keyboard-nav-hud--metricare {
+  --hud-accent: #2563eb;
+  --hud-label: #1d4ed8;
+  --hud-muted: #64748b;
+  --hud-hint: #64748b;
+  --hud-border: rgba(37, 99, 235, 0.35);
+  --hud-bracket: #2563eb;
+  --hud-panel-a: rgba(252, 252, 253, 0.95);
+  --hud-panel-b: rgba(241, 245, 249, 0.92);
+  --hud-kbd-fg: #0f172a;
+  --hud-kbd-bg: #ffffff;
+  --hud-kbd-border: #e2e8f0;
+  --hud-kbd-shadow: rgba(15, 23, 42, 0.06);
+  --hud-hub: #2563eb;
+  --hud-dismiss: #94a3b8;
+  --hud-glow: rgba(37, 99, 235, 0.12);
+  --hud-pulse-mid-border: rgba(37, 99, 235, 0.65);
+  --hud-pulse-mid-glow: rgba(37, 99, 235, 0.14);
+  --hud-outer-glow: rgba(15, 23, 42, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  .keyboard-nav-hud--intro,
+  .keyboard-nav-hud--tail {
+    --hud-outer-glow: rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Corner brackets */
+.keyboard-nav-hud::before,
+.keyboard-nav-hud::after {
+  content: '';
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  pointer-events: none;
+  border-color: var(--hud-bracket);
+  border-style: solid;
+  opacity: 0.8;
+  transition: border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.keyboard-nav-hud::before {
+  top: 5px;
+  left: 5px;
+  border-width: 1px 0 0 1px;
+}
+
+.keyboard-nav-hud::after {
+  bottom: 5px;
+  right: 5px;
+  border-width: 0 1px 1px 0;
+}
+
+@media (min-width: 900px) and (pointer: fine) {
+  .keyboard-nav-hud {
+    display: block;
+  }
+}
+
+@media print {
+  .keyboard-nav-hud {
+    display: none !important;
+  }
+}
+
+.keyboard-nav-hud__dismiss {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.25rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--hud-dismiss);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.keyboard-nav-hud__dismiss:hover {
+  opacity: 1;
+  color: var(--hud-accent);
+  background: color-mix(in srgb, var(--hud-accent) 14%, transparent);
+}
+
+.keyboard-nav-hud__label {
+  margin: 0 0 0.45rem;
+  padding-right: 1rem;
+  color: var(--hud-label);
+  opacity: 0.95;
+  transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.keyboard-nav-hud__cross {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.45rem;
+}
+
+.keyboard-nav-hud__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 1.55rem;
+}
+
+.keyboard-nav-hud__row--mid {
+  gap: 0.45rem;
+}
+
+.keyboard-nav-hud__kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.65rem;
+  height: 1.45rem;
+  padding: 0 0.35rem;
+  font-family: var(--sol-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--hud-kbd-fg);
+  background: var(--hud-kbd-bg);
+  border: 1px solid var(--hud-kbd-border);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 var(--hud-kbd-shadow);
+  transition:
+    transform 0.08s ease,
+    background 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease,
+    color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.keyboard-nav-hud__kbd.keyboard-nav-hud__kbd--pressed {
+  transform: translateY(1px);
+  background: color-mix(in srgb, var(--hud-accent) 24%, var(--hud-kbd-bg));
+  border-color: var(--hud-accent);
+  box-shadow:
+    0 0 14px var(--hud-glow),
+    0 1px 0 var(--hud-kbd-shadow);
+  animation: none;
+}
+
+.keyboard-nav-hud__hub {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 1px;
+  background: var(--hud-hub);
+  opacity: 0.65;
+  transition:
+    background 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.12s ease;
+}
+
+.keyboard-nav-hud__hub.keyboard-nav-hud__hub--pulse {
+  box-shadow: 0 0 10px var(--hud-glow);
+}
+
+.keyboard-nav-hud__hint {
+  margin: 0;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  color: var(--hud-hint);
+  opacity: 0.9;
+  transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .keyboard-nav-hud__kbd:not(.keyboard-nav-hud__kbd--pressed) {
+    animation: keyboard-nav-hud-pulse 3.2s ease-in-out infinite;
+  }
+
+  .keyboard-nav-hud__kbd--d0 {
+    animation-delay: 0s;
+  }
+  .keyboard-nav-hud__kbd--d1 {
+    animation-delay: 0.2s;
+  }
+  .keyboard-nav-hud__kbd--d2 {
+    animation-delay: 0.4s;
+  }
+  .keyboard-nav-hud__kbd--d3 {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes keyboard-nav-hud-pulse {
+    0%,
+    100% {
+      border-color: var(--hud-kbd-border);
+      box-shadow: 0 1px 0 var(--hud-kbd-shadow);
+    }
+    50% {
+      border-color: var(--hud-pulse-mid-border);
+      box-shadow:
+        0 0 0 1px var(--hud-pulse-mid-glow),
+        0 1px 0 var(--hud-kbd-shadow);
+    }
+  }
+}

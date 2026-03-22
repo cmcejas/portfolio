@@ -1,0 +1,169 @@
+export const site = {
+  name: 'Carlos Manuel Cejas',
+  shortName: 'Carlos Cejas',
+  title: 'Computer Science Student',
+  tagline:
+    'BSc/MSc Computer Science at Trinity College Dublin. I build software across web, mobile, robotics, and AI — from path planning for autonomous racing to multimodal health apps.',
+  email: 'carlosmcejas@gmail.com',
+  phone: '(267) 443-3427',
+  location: 'Greater Philadelphia / Dublin',
+  workAuth: 'U.S. Citizen with full work authorization in the United States',
+  links: {
+    github: 'https://github.com/cmcejas',
+    linkedin: 'https://linkedin.com/in/cmcejas',
+    site: 'https://cmcejas.dev',
+  },
+  resumePath: '/carlos-cejas-resume.pdf',
+} as const
+
+export const education = [
+  {
+    school: 'Trinity College Dublin',
+    detail: 'BSc/MSc Computer Science (Integrated Masters)',
+    range: '2025 – 2030',
+  },
+  {
+    school: 'Springfield Township High School',
+    detail: 'Relevant: AP Computer Science A, Multi Variable Calculus, Engineering Design',
+    range: '2021 – 2025',
+  },
+] as const
+
+export const experience = [
+  {
+    role: 'Path Planning Engineer',
+    org: 'Formula Trinity – Autonomous Racing Team',
+    range: 'Oct 2025 – Present',
+    bullets: [
+      'Develop and refine path-planning algorithms in Python for the autonomous race car subsystem.',
+      'Analyze and improve ROS-based codebase; test algorithms in Gazebo simulations.',
+      'Optimize racing lines for higher speeds and reduced lap distance.',
+    ],
+  },
+  {
+    role: 'Web Developer',
+    org: 'Parkt – Startup',
+    range: 'May 2024 – Sep 2024',
+    bullets: [
+      'Led development of company website, building new features and optimizing existing systems.',
+      'Consulted on operations, branding, and marketing strategies for early-stage growth.',
+      'Contributed to key startup decisions, gaining hands-on experience with product development.',
+    ],
+  },
+  {
+    role: 'Robotics Club Instructor',
+    org: 'Volunteer – Former Middle School',
+    range: 'Nov 2021 – Dec 2024',
+    bullets: [
+      'Mentored middle school robotics team that won regionals under my previous leadership.',
+      'Taught FIRST Lego League programming, debugging, and teamwork skills.',
+    ],
+  },
+] as const
+
+export type SlideTheme =
+  | 'mars'
+  | 'blackout'
+  | 'dungeon'
+  | 'pollen'
+  | 'metricare'
+
+/** Highlighted work — repos, demos, and company links you can update anytime */
+export const featuredProjects = [
+  {
+    name: 'Sol-450',
+    slideTheme: 'mars' satisfies SlideTheme,
+    context: 'Collaboration · Mars food simulation',
+    description:
+      'Full-stack, multi-agent greenhouse simulator for long-duration Mars missions: configure a colony, run AI-managed agriculture, and track crew survival. React 19 and Three.js for 3D colony visualization; FastAPI simulation engine; Strands agents on Amazon Bedrock with an MCP knowledge base; DynamoDB session state.',
+    tech: 'React, Three.js, FastAPI, AWS Bedrock, DynamoDB, JavaScript, Python',
+    links: {
+      repo: 'https://github.com/mcrowley19/mars-food-simulation',
+      live: 'https://sol450.xyz',
+      more: null,
+    },
+  },
+  {
+    name: 'Blackout',
+    slideTheme: 'blackout' satisfies SlideTheme,
+    context: 'Phone-free with friends · Cofounder',
+    description:
+      'Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends—with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Blackout and work across mobile, backend, and web.',
+    tech:
+      'Native iOS and Android (Swift, Kotlin) using platform focus and app-limit APIs; cloud backend for sessions, host orchestration, and messaging; real-time layer for chat and announcements; APNs and FCM; universal links and App Links for invites; web for onboarding, accounts, and company presence',
+    links: {
+      repo: null,
+      live: 'https://blackout.codes',
+      liveLabel: 'blackout.codes',
+      more: {
+        label: 'Blackout Codes on LinkedIn',
+        href: 'https://www.linkedin.com/company/blackout-codes/',
+      },
+    },
+  },
+  {
+    name: 'AI Dungeon Master',
+    slideTheme: 'dungeon' satisfies SlideTheme,
+    context: 'Claude Builder Club @ TCD Hackathon · Dec 2025',
+    description:
+      'Hackathon winner (Best Team Collaboration, Most Creative Use of Claude). Web-based D&D with AI-driven storytelling, persistent campaigns, and randomized characters. Originally Claude-powered; codebase now uses Google Gemini.',
+    tech: 'Python, FastAPI, React, Vite, Gemini API',
+    links: {
+      repo: 'https://github.com/Cillian-Cooke/hackathon',
+      live: null,
+      more: null,
+    },
+  },
+  {
+    name: 'Pollen Cast',
+    slideTheme: 'pollen' satisfies SlideTheme,
+    context: 'Hack Europe · Feb 2026',
+    description:
+      'Multimodal allergy health-check app (Expo/React Native): eye photo, optional voice, and location for assessment. Node backend with Gemini and optional Google Pollen API; Supabase auth; optional Python (librosa) voice service; safety guardrails and HL7 FHIR–oriented outputs.',
+    tech: 'React Native (Expo), Node.js, Express, Gemini API, Supabase, Python (librosa)',
+    links: {
+      repo: 'https://github.com/cmcejas/hackeurope',
+      live: 'https://pollen-cast.vercel.app',
+      more: null,
+    },
+  },
+  {
+    name: 'Metricare',
+    slideTheme: 'metricare' satisfies SlideTheme,
+    context: 'Collaboration · Medical dashboard',
+    description:
+      'Medical patient dashboard unifying history, medications, FDA-based drug interaction checks, and AI-generated summaries (Gemini) — one Metricare UI and API instead of scattered legacy tools.',
+    tech: 'React, Vite, FastAPI, TypeScript, Python, Gemini API',
+    links: {
+      repo: 'https://github.com/mcrowley19/dashboard',
+      live: 'https://metricare.vercel.app',
+      more: null,
+    },
+  },
+] as const
+
+export type FeaturedProject = (typeof featuredProjects)[number]
+
+export const skills = {
+  languages: 'Python, TypeScript, JavaScript, Java, HTML/CSS, SQL, Bash',
+  frameworks:
+    'React, React Native (Expo), Vite, FastAPI, Node.js, Express, Three.js, ROS, librosa',
+  tools:
+    'Git, Docker, Linux (Ubuntu/Arch), AWS (Bedrock, DynamoDB), Supabase, Vercel, Gazebo, VS Code',
+  ai:
+    'Gemini API, Claude API, agent patterns (Strands, MCP / knowledge bases), Google Pollen API, HL7 FHIR R4, SNOMED-CT, OpenFDA (drug search & interactions)',
+  spoken: 'English (Native), Spanish (Native)',
+} as const
+
+export const activities = [
+  {
+    label: 'Trinity',
+    items:
+      'Computer Science Society, Formula Trinity, Philosophical Society, Tennis Society',
+  },
+  {
+    label: 'High school',
+    items:
+      'Science Olympiad (Selected), NHS Member, DECA 2nd Place MTDM, Youth & Government Treasurer',
+  },
+] as const

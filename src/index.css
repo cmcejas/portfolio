@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Manrope:wght@400;500;600&family=Orbitron:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&family=Syne:wght@500;700&display=swap');
+
+:root {
+  /* Warm paper + claret — editorial, not template-teal */
+  --bg: #ebe6dc;
+  --bg-elevated: #f3efe6;
+  --text: #1e1b18;
+  --text-muted: #5e574e;
+  --border: #cfc6b8;
+  --accent: #6e2f3a;
+  --accent-soft: rgba(110, 47, 58, 0.11);
+  --on-accent: #f9f6f0;
+  --radius: 10px;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Literata', 'Georgia', serif;
+  /* Sol-450 / mars-food-simulation frontend/src/index.css */
+  --sol-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --sol-heading: 'Syne', system-ui, -apple-system, sans-serif;
+  --sol-hero: 'Orbitron', 'Syne', system-ui, -apple-system, sans-serif;
+  --sol-mono: 'JetBrains Mono', 'Fira Code', 'Fira Mono', ui-monospace, monospace;
+  /* mcrowley19/dashboard MetricareDashboard.tsx */
+  --metricare-ui: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --measure: 38rem;
+  --page-pad: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131110;
+    --bg-elevated: #1c1a17;
+    --text: #e8e2d9;
+    --text-muted: #9a9288;
+    --border: #35312c;
+    --accent: #c9a87c;
+    --accent-soft: rgba(201, 168, 124, 0.14);
+    --on-accent: #141210;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  margin: 0 0 0.35em;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0;
+}
