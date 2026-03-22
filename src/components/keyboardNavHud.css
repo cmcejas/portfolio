@@ -126,40 +126,40 @@
     0 12px 38px var(--hud-outer);
 }
 
-/* Blackout: #00e5ff / #ff00e5 links, grid rgba(0,229,255,0.045) */
+/* Blackout: monochrome only (no neon) — matches phone-free / focus aesthetic */
 .keyboard-nav-hud--blackout {
-  --hud-accent: #00e5ff;
-  --hud-label: #00e5ff;
-  --hud-bracket: #00e5ff;
-  --hud-hub: #ff00e5;
-  --hud-muted: #a0a0a0;
-  --hud-hint: #8c8c8c;
-  --hud-dismiss: rgba(160, 160, 160, 0.65);
-  --hud-border: rgba(0, 229, 255, 0.38);
-  --hud-pulse-mid-border: rgba(0, 229, 255, 0.82);
-  --hud-pulse-mid-glow: rgba(0, 229, 255, 0.18);
-  --hud-accent-soft: rgba(0, 229, 255, 0.14);
-  --hud-glow: rgba(255, 0, 229, 0.28);
-  --hud-kbd-fg: #e8e8e8;
-  --hud-kbd-bg: rgba(22, 22, 26, 0.94);
-  --hud-kbd-border: rgba(0, 229, 255, 0.3);
-  --hud-kbd-shadow: rgba(0, 0, 0, 0.55);
-  --hud-outer: rgba(0, 0, 0, 0.72);
+  --hud-accent: #f0f0f0;
+  --hud-label: #ffffff;
+  --hud-bracket: #e0e0e0;
+  --hud-hub: #ffffff;
+  --hud-muted: #a3a3a3;
+  --hud-hint: #8a8a8a;
+  --hud-dismiss: rgba(180, 180, 180, 0.55);
+  --hud-border: rgba(255, 255, 255, 0.22);
+  --hud-pulse-mid-border: rgba(255, 255, 255, 0.45);
+  --hud-pulse-mid-glow: rgba(255, 255, 255, 0.08);
+  --hud-accent-soft: rgba(255, 255, 255, 0.1);
+  --hud-glow: rgba(255, 255, 255, 0.2);
+  --hud-kbd-fg: #f5f5f5;
+  --hud-kbd-bg: rgba(28, 28, 28, 0.95);
+  --hud-kbd-border: rgba(255, 255, 255, 0.18);
+  --hud-kbd-shadow: rgba(0, 0, 0, 0.65);
+  --hud-outer: rgba(0, 0, 0, 0.75);
   background:
     radial-gradient(
-      ellipse 72% 62% at 72% 12%,
-      rgba(0, 229, 255, 0.14) 0%,
-      transparent 56%
+      ellipse 70% 58% at 70% 8%,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 55%
     ),
     radial-gradient(
-      ellipse 58% 52% at 8% 92%,
-      rgba(255, 0, 229, 0.12) 0%,
+      ellipse 55% 48% at 12% 88%,
+      rgba(255, 255, 255, 0.04) 0%,
       transparent 52%
     ),
-    linear-gradient(165deg, #0c0c0e 0%, #000000 100%);
-  border-color: rgba(0, 229, 255, 0.34);
+    linear-gradient(165deg, #0a0a0a 0%, #000000 100%);
+  border-color: rgba(255, 255, 255, 0.2);
   box-shadow:
-    0 0 0 1px rgba(255, 0, 229, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
     0 12px 42px var(--hud-outer);
 }
 
