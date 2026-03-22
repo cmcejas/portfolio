@@ -425,7 +425,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .keyboard-nav-hud__kbd:not(.keyboard-nav-hud__kbd--pressed) {
-    animation: keyboard-nav-hud-pulse 3.2s ease-in-out infinite;
+    animation: keyboard-nav-hud-pulse 2.75s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .keyboard-nav-hud__kbd--d0 {
@@ -446,12 +446,15 @@
     100% {
       border-color: var(--hud-kbd-border);
       box-shadow: 0 1px 0 var(--hud-kbd-shadow);
+      filter: brightness(1);
     }
     50% {
       border-color: var(--hud-pulse-mid-border);
       box-shadow:
         0 0 0 1px var(--hud-pulse-mid-glow),
+        0 4px 14px color-mix(in srgb, var(--hud-accent) 12%, transparent),
         0 1px 0 var(--hud-kbd-shadow);
+      filter: brightness(1.07);
     }
   }
 }

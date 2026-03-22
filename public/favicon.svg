@@ -1,4 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#6e2f3a"/>
-  <text x="16" y="21" text-anchor="middle" fill="#f9f6f0" font-family="Georgia, serif" font-size="14" font-weight="600">CM</text>
+  <title>Carlos Manuel Cejas</title>
+  <defs>
+    <style>
+      .tile {
+        fill: #6e2f3a;
+      }
+      .mark {
+        fill: #f9f6f0;
+      }
+      .rim {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1;
+        stroke-opacity: 0.06;
+      }
+      @media (prefers-color-scheme: dark) {
+        .tile {
+          fill: #1c1a17;
+        }
+        .mark {
+          fill: #c9a87c;
+        }
+        .rim {
+          stroke: #fff;
+          stroke-opacity: 0.08;
+        }
+      }
+    </style>
+  </defs>
+  <rect class="tile" width="32" height="32" rx="8" ry="8" />
+  <rect
+    class="rim"
+    x="0.5"
+    y="0.5"
+    width="31"
+    height="31"
+    rx="7.5"
+    ry="7.5"
+  />
+  <!-- Vector CM — matches site claret / cream; dark mode uses elevated bg + gold accent -->
+  <path
+    class="mark"
+    fill-rule="evenodd"
+    d="M12.25 7.25H8.75c-1.2 0-2.12.33-2.78 1-.65.65-.97 1.55-.97 2.7v8.1c0 1.15.32 2.05.97 2.7.66.67 1.58 1 2.78 1h3.5v-2.35H9.35c-.5 0-.86-.14-1.1-.42-.22-.27-.33-.65-.33-1.14v-7.58c0-.5.11-.88.33-1.15.24-.28.6-.42 1.1-.42h2.9V7.25Z"
+  />
+  <path
+    class="mark"
+    d="M14.85 24.75V7.25h2.35l2.45 7.6c.16.5.3.98.42 1.45.12-.47.26-.95.42-1.45l2.45-7.6h2.35v17.5h-2.25v-11.4l-1.75 5.35h-1.95l-1.75-5.35v11.4h-2.25Z"
+  />
 </svg>

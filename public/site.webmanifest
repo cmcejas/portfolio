@@ -1,0 +1,18 @@
+{
+  "name": "Carlos Manuel Cejas",
+  "short_name": "Carlos Cejas",
+  "description": "Computer Science student at Trinity College Dublin — software, robotics, and AI projects.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ebe6dc",
+  "theme_color": "#6e2f3a",
+  "lang": "en-IE",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
