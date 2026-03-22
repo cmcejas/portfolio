@@ -25,7 +25,6 @@ function readTheme(el: Element): HudTheme {
   return 'intro'
 }
 
-/** Slide that covers the largest area of the viewport wins (matches scroll-snap focus). */
 function pickActiveTheme(): HudTheme {
   if (typeof document === 'undefined') return 'intro'
   const vh = window.innerHeight

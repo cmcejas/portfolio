@@ -19,7 +19,7 @@ function isTypingTarget(target: EventTarget | null): boolean {
   return false
 }
 
-function hudModifierClass(theme: HudTheme): string {
+function hudThemeClass(theme: HudTheme): string {
   if (theme === 'tail') return 'keyboard-nav-hud--tail'
   return `keyboard-nav-hud--${theme}`
 }
@@ -88,7 +88,7 @@ export function KeyboardNavHud() {
 
   return (
     <div
-      className={`keyboard-nav-hud ${hudModifierClass(activeTheme)}`}
+      className={`keyboard-nav-hud ${hudThemeClass(activeTheme)}`}
       role="status"
       aria-live="polite"
       aria-label="You can use arrow keys to move between sections and scroll panels."
