@@ -63,7 +63,7 @@ export const featuredProjects = [
   {
     name: 'Sol-450',
     slideTheme: 'mars' satisfies SlideTheme,
-    context: 'Collaboration · Mars food simulation',
+    context: 'START HACK ST.GALLEN - MARCH 2026',
     description:
       'Full-stack, multi-agent greenhouse simulator for long-duration Mars missions: configure a colony, run AI-managed agriculture, and track crew survival. React 19 and Three.js for 3D colony visualization; FastAPI simulation engine; Strands agents on Amazon Bedrock with an MCP knowledge base; DynamoDB session state.',
     tech: 'React, Three.js, FastAPI, AWS Bedrock, DynamoDB, JavaScript, Python',
