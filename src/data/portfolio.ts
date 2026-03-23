@@ -3,7 +3,7 @@ export const site = {
   shortName: 'Carlos Cejas',
   title: 'Computer Science Student',
   tagline:
-    'BSc/MSc Computer Science at Trinity College Dublin. I build software across web, mobile, robotics, and AI — from path planning for autonomous racing to multimodal health apps.',
+    'BSc/MSc Computer Science at Trinity College Dublin. I build software across web, mobile, robotics, and AI; from path planning for autonomous racing to multimodal health apps.',
   email: 'carlosmcejas@gmail.com',
   phone: '(267) 443-3427',
   location: 'Greater Philadelphia / Dublin',
@@ -47,16 +47,6 @@ export const experience = [
     bullets: [
       'Led development of company website, building new features and optimizing existing systems.',
       'Consulted on operations, branding, and marketing strategies for early-stage growth.',
-      'Contributed to key startup decisions, gaining hands-on experience with product development.',
-    ],
-  },
-  {
-    role: 'Robotics Club Instructor',
-    org: 'Volunteer – Former Middle School',
-    range: 'Nov 2021 – Dec 2024',
-    bullets: [
-      'Mentored middle school robotics team that won regionals under my previous leadership.',
-      'Taught FIRST Lego League programming, debugging, and teamwork skills.',
     ],
   },
 ] as const
