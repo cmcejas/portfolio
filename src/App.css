@@ -75,6 +75,31 @@
   }
 }
 
+/* Landing + closing slide: white type, near-black base, blue accent (any color scheme). */
+.site-slide--intro-split.site-slide--surface,
+.site-slide--tail.site-slide--surface {
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.74);
+  --border: rgba(255, 255, 255, 0.2);
+  --bg-elevated: rgba(255, 255, 255, 0.07);
+  --accent: #6eb3ff;
+  --accent-soft: rgba(110, 179, 255, 0.18);
+  --on-accent: #06080d;
+  color: var(--text);
+  background:
+    radial-gradient(
+      ellipse 85% 55% at 100% -5%,
+      rgba(110, 179, 255, 0.12) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 45% at -5% 105%,
+      rgba(37, 99, 235, 0.28) 0%,
+      transparent 52%
+    ),
+    #0a0a0c;
+}
+
 .site-slide__frame {
   flex: 1;
   min-height: 0;

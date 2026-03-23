@@ -154,7 +154,10 @@ function App() {
 
       <ProjectShowcase />
 
-      <div className="site-slide site-slide--surface" data-hud-theme="tail">
+      <div
+        className="site-slide site-slide--surface site-slide--tail"
+        data-hud-theme="tail"
+      >
         <ScrollRevealPane className="site-slide__frame site-slide__frame--scroll">
           <section
             className="section section--snap"

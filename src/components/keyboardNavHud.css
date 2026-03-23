@@ -65,26 +65,40 @@
 }
 
 /*
- * Intro / tail: same stack as .site-slide--surface (App.css) — paper + accent radials.
+ * Intro / tail: match App.css — near-black base, blue accent (HUD is fixed; no slide var inherit).
  */
 .keyboard-nav-hud--intro,
 .keyboard-nav-hud--tail {
+  --hud-accent: #6eb3ff;
+  --hud-label: #6eb3ff;
+  --hud-bracket: #6eb3ff;
+  --hud-hub: #5ea1f0;
+  --hud-muted: rgba(255, 255, 255, 0.72);
+  --hud-hint: rgba(255, 255, 255, 0.58);
+  --hud-dismiss: rgba(255, 255, 255, 0.48);
+  --hud-border: color-mix(in srgb, #6eb3ff 32%, rgba(255, 255, 255, 0.22));
+  --hud-kbd-fg: #ffffff;
+  --hud-kbd-bg: rgba(255, 255, 255, 0.08);
+  --hud-kbd-border: rgba(255, 255, 255, 0.2);
+  --hud-kbd-shadow: rgba(0, 0, 0, 0.45);
+  --hud-accent-soft: rgba(110, 179, 255, 0.18);
+  --hud-glow: rgba(110, 179, 255, 0.14);
+  --hud-pulse-mid-border: color-mix(in srgb, #6eb3ff 40%, rgba(255, 255, 255, 0.2));
+  --hud-pulse-mid-glow: rgba(110, 179, 255, 0.12);
+  --hud-outer: rgba(0, 0, 0, 0.5);
+
   background:
     radial-gradient(
       ellipse 85% 55% at 100% -5%,
-      var(--accent-soft) 0%,
+      rgba(110, 179, 255, 0.12) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 70% 45% at -5% 105%,
-      color-mix(in srgb, var(--accent) 6%, transparent) 0%,
-      transparent 50%
+      rgba(37, 99, 235, 0.22) 0%,
+      transparent 52%
     ),
-    linear-gradient(
-      145deg,
-      color-mix(in srgb, var(--bg-elevated) 96%, var(--bg)) 0%,
-      color-mix(in srgb, var(--bg) 94%, var(--bg-elevated)) 100%
-    );
+    linear-gradient(145deg, #101114 0%, #0a0a0c 100%);
 }
 
 /* —— Project tiles: colors from projectSlides.css (links, glows, bg) —— */
