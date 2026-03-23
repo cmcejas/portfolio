@@ -4,7 +4,7 @@
  * and the default red/white capsule ShaderMaterial (used when the GLB is absent).
  */
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Suspense, useEffect, useMemo, useRef } from 'react'
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js'
 
@@ -20,7 +20,14 @@ const EASE_OUT_BACK = (t: number) => {
 
 const START_Y = 1.5
 const END_Y = 0
-const END_X = 0.95
+/** Nudge capsule higher on narrow viewports (world +Y reads as up on screen). */
+const MOBILE_Y_LIFT = 0.42
+/** Uniform scale vs desktop on mobile so the hero + copy fit comfortably. */
+const MOBILE_PILL_SCALE_MUL = 0.72
+/** Horizontal rest position; offset right on wide layouts to balance copy column. */
+const PILL_END_X_DESKTOP = 0.95
+const MOBILE_PILL_MAX_WIDTH_PX = 899
+const MOBILE_PILL_MQ = `(max-width: ${MOBILE_PILL_MAX_WIDTH_PX}px)`
 const ROT_Z = 0.18
 const ROT_X = -0.22
 const SPIN_SPEED = 0.45
@@ -89,9 +96,17 @@ const FRAGMENT_SHADER = `
 function LandingPillGroup({
   slideActive,
   spin,
+  pillEndX,
+  animStartY,
+  animEndY,
+  scaleMul,
 }: {
   slideActive: boolean
   spin: boolean
+  pillEndX: number
+  animStartY: number
+  animEndY: number
+  scaleMul: number
 }) {
   const groupRef = useRef<THREE.Group>(null)
   const matRef = useRef<THREE.ShaderMaterial>(null)
@@ -127,8 +142,8 @@ function LandingPillGroup({
     }
 
     if (!spin) {
-      g.position.set(END_X, END_Y, 0)
-      g.scale.setScalar(1)
+      g.position.set(pillEndX, animEndY, 0)
+      g.scale.setScalar(scaleMul)
       g.rotation.set(ROT_X, 0.7, ROT_Z, 'YXZ')
       if (mat) mat.uniforms.uOpacity.value = 1
       return
@@ -136,8 +151,12 @@ function LandingPillGroup({
 
     const elapsed = performance.now() / 1000 - animStartRef.current
     const t = Math.min(1, elapsed / DURATION)
-    g.position.set(END_X, START_Y + (END_Y - START_Y) * EASE_OUT_BACK(t), 0)
-    g.scale.setScalar(0.96 + 0.04 * EASE_OUT_CUBIC(t))
+    g.position.set(
+      pillEndX,
+      animStartY + (animEndY - animStartY) * EASE_OUT_BACK(t),
+      0,
+    )
+    g.scale.setScalar(scaleMul * (0.96 + 0.04 * EASE_OUT_CUBIC(t)))
     const fade = EASE_OUT_CUBIC(t)
     if (mat) mat.uniforms.uOpacity.value = fade
     g.rotation.set(
@@ -182,7 +201,7 @@ function LandingPillGroup({
         <meshStandardMaterial color="#f0f1f3" roughness={0.9} metalness={0} />
       </mesh>
 
-      <group ref={groupRef} position={[END_X, START_Y, 0]} rotation-order="YXZ">
+      <group ref={groupRef} position={[pillEndX, animStartY, 0]} rotation-order="YXZ">
         <mesh castShadow receiveShadow scale={0.975}>
           <capsuleGeometry args={[0.5, 1.2, 24, 48]} />
           <shaderMaterial
@@ -205,6 +224,25 @@ type Props = {
 }
 
 export function MetricarePillCanvas({ slideActive, spin, className }: Props) {
+  const [mobilePillLayout, setMobilePillLayout] = useState(() =>
+    typeof window !== 'undefined'
+      ? window.matchMedia(MOBILE_PILL_MQ).matches
+      : false,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_PILL_MQ)
+    const onChange = () => setMobilePillLayout(mq.matches)
+    onChange()
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+
+  const pillEndX = mobilePillLayout ? 0 : PILL_END_X_DESKTOP
+  const animStartY = mobilePillLayout ? START_Y + MOBILE_Y_LIFT : START_Y
+  const animEndY = mobilePillLayout ? END_Y + MOBILE_Y_LIFT : END_Y
+  const scaleMul = mobilePillLayout ? MOBILE_PILL_SCALE_MUL : 1
+
   return (
     <Canvas
       className={className}
@@ -234,7 +272,14 @@ export function MetricarePillCanvas({ slideActive, spin, className }: Props) {
       }}
     >
       <Suspense fallback={null}>
-        <LandingPillGroup slideActive={slideActive} spin={spin} />
+        <LandingPillGroup
+          slideActive={slideActive}
+          spin={spin}
+          pillEndX={pillEndX}
+          animStartY={animStartY}
+          animEndY={animEndY}
+          scaleMul={scaleMul}
+        />
       </Suspense>
     </Canvas>
   )

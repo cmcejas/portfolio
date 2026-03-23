@@ -16,6 +16,99 @@ const STAGGER = 0.09
 function App() {
   useArrowSlideNavigation()
 
+  const introHero = (
+    <section className="hero">
+      <p className="eyebrow hero-line hero-line--d0">Portfolio</p>
+      <h1 className="hero-line hero-line--d1">{site.name}</h1>
+      <p className="hero__title hero-line hero-line--d2">{site.title}</p>
+      <p className="hero__lead hero-line hero-line--d3">{site.tagline}</p>
+      <ul className="hero__meta hero-line hero-line--d4">
+        <li>{site.location}</li>
+        <li>{site.workAuth}</li>
+      </ul>
+      <div className="hero__actions hero-line hero-line--d5">
+        <a className="btn" href={site.resumePath} download>
+          Download resume
+        </a>
+        <a
+          className="btn btn--ghost"
+          href={site.links.github}
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          className="btn btn--ghost"
+          href={site.links.linkedin}
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </section>
+  )
+
+  const introWorkEducation = (
+    <>
+      <section
+        className="section section--snap"
+        id="work"
+        aria-labelledby="work-heading"
+      >
+        <ScrollReveal>
+          <h2 id="work-heading">Experience</h2>
+        </ScrollReveal>
+        <ul className="timeline">
+          {experience.map((job, i) => (
+            <ScrollReveal
+              key={job.role + job.org}
+              as="li"
+              delay={i * STAGGER}
+            >
+              <article className="card">
+                <div className="card__head">
+                  <h3>{job.role}</h3>
+                  <span className="card__range">{job.range}</span>
+                </div>
+                <p className="card__org">{job.org}</p>
+                <ul className="bullets">
+                  {job.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </article>
+            </ScrollReveal>
+          ))}
+        </ul>
+      </section>
+
+      <section
+        className="section section--snap"
+        id="education"
+        aria-labelledby="edu-heading"
+      >
+        <ScrollReveal>
+          <h2 id="edu-heading">Education</h2>
+        </ScrollReveal>
+        <ul className="stack">
+          {education.map((e, i) => (
+            <ScrollReveal key={e.school} as="li" delay={i * STAGGER}>
+              <article className="card card--compact">
+                <div className="card__head">
+                  <h3>{e.school}</h3>
+                  <span className="card__range">{e.range}</span>
+                </div>
+                <p className="muted">{e.detail}</p>
+              </article>
+            </ScrollReveal>
+          ))}
+        </ul>
+      </section>
+    </>
+  )
+
   return (
     <>
     <main id="top">
@@ -49,100 +142,12 @@ function App() {
           </header>
 
           <div className="site-slide__intro-split-body">
-            <div className="site-slide__intro-left">
-              <section className="hero">
-                <p className="eyebrow hero-line hero-line--d0">Portfolio</p>
-                <h1 className="hero-line hero-line--d1">{site.name}</h1>
-                <p className="hero__title hero-line hero-line--d2">
-                  {site.title}
-                </p>
-                <p className="hero__lead hero-line hero-line--d3">
-                  {site.tagline}
-                </p>
-                <ul className="hero__meta hero-line hero-line--d4">
-                  <li>{site.location}</li>
-                  <li>{site.workAuth}</li>
-                </ul>
-                <div className="hero__actions hero-line hero-line--d5">
-                  <a className="btn" href={site.resumePath} download>
-                    Download resume
-                  </a>
-                  <a
-                    className="btn btn--ghost"
-                    href={site.links.github}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    className="btn btn--ghost"
-                    href={site.links.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-              </section>
+            <div className="site-slide__intro-columns">
+              <div className="site-slide__intro-left">{introHero}</div>
+              <ScrollRevealPane className="site-slide__intro-right">
+                {introWorkEducation}
+              </ScrollRevealPane>
             </div>
-
-            <ScrollRevealPane className="site-slide__intro-right">
-              <section
-                className="section section--snap"
-                id="work"
-                aria-labelledby="work-heading"
-              >
-                <ScrollReveal>
-                  <h2 id="work-heading">Experience</h2>
-                </ScrollReveal>
-                <ul className="timeline">
-                  {experience.map((job, i) => (
-                    <ScrollReveal
-                      key={job.role + job.org}
-                      as="li"
-                      delay={i * STAGGER}
-                    >
-                      <article className="card">
-                        <div className="card__head">
-                          <h3>{job.role}</h3>
-                          <span className="card__range">{job.range}</span>
-                        </div>
-                        <p className="card__org">{job.org}</p>
-                        <ul className="bullets">
-                          {job.bullets.map((b) => (
-                            <li key={b}>{b}</li>
-                          ))}
-                        </ul>
-                      </article>
-                    </ScrollReveal>
-                  ))}
-                </ul>
-              </section>
-
-              <section
-                className="section section--snap"
-                id="education"
-                aria-labelledby="edu-heading"
-              >
-                <ScrollReveal>
-                  <h2 id="edu-heading">Education</h2>
-                </ScrollReveal>
-                <ul className="stack">
-                  {education.map((e, i) => (
-                    <ScrollReveal key={e.school} as="li" delay={i * STAGGER}>
-                      <article className="card card--compact">
-                        <div className="card__head">
-                          <h3>{e.school}</h3>
-                          <span className="card__range">{e.range}</span>
-                        </div>
-                        <p className="muted">{e.detail}</p>
-                      </article>
-                    </ScrollReveal>
-                  ))}
-                </ul>
-              </section>
-            </ScrollRevealPane>
           </div>
         </div>
       </div>
