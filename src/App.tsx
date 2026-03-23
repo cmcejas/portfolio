@@ -135,7 +135,8 @@ function App() {
             <a
               className="btn btn--small header-piece header-piece--d2"
               href={site.resumePath}
-              download
+              target="_blank"
+              rel="noreferrer"
             >
               Resume
             </a>
