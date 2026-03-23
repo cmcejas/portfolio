@@ -5,7 +5,7 @@ export const site = {
   tagline:
     'BSc/MSc Computer Science at Trinity College Dublin. I build software across web, mobile, robotics, and AI; from path planning for autonomous racing to multimodal health apps.',
   email: 'carlosmcejas@gmail.com',
-  phone: '(267) 443-3427',
+  phone: '+1 (267) 443-3427',
   location: 'Greater Philadelphia / Dublin',
   workAuth: 'U.S. Citizen with full work authorization in the United States',
   links: {
