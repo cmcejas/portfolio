@@ -25,47 +25,55 @@ function readTheme(el: Element): HudTheme {
   return 'intro'
 }
 
-function pickActiveTheme(): HudTheme {
-  if (typeof document === 'undefined') return 'intro'
-  const vh = window.innerHeight
-  const vw = window.innerWidth
-  let best: { area: number; theme: HudTheme } = { area: 0, theme: 'intro' }
-  for (const el of document.querySelectorAll('[data-hud-theme]')) {
-    const r = el.getBoundingClientRect()
-    const w = Math.max(0, Math.min(r.right, vw) - Math.max(r.left, 0))
-    const h = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0))
-    const area = w * h
-    if (area > best.area) {
-      best = { area, theme: readTheme(el) }
-    }
-  }
-  return best.area > 0 ? best.theme : 'intro'
-}
-
 export function useActiveHudTheme(): HudTheme {
   const [theme, setTheme] = useState<HudTheme>('intro')
 
   useEffect(() => {
-    let raf = 0
-    const update = () => {
-      raf = 0
-      setTheme(pickActiveTheme())
-    }
-    const schedule = () => {
-      if (raf) cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(update)
+    if (typeof document === 'undefined') return
+
+    const els = Array.from(document.querySelectorAll('[data-hud-theme]'))
+    if (els.length === 0) return
+
+    const ratios = new Map<Element, number>()
+    const themes = new Map<Element, HudTheme>()
+
+    for (const el of els) {
+      themes.set(el, readTheme(el))
+      ratios.set(el, 0)
     }
 
-    update()
-    window.addEventListener('scroll', schedule, { passive: true, capture: true })
-    window.addEventListener('resize', schedule, { passive: true })
-    document.addEventListener('visibilitychange', update)
+    const pick = () => {
+      let bestTheme: HudTheme = 'intro'
+      let bestRatio = 0
+      for (const [el, ratio] of ratios) {
+        if (ratio > bestRatio) {
+          bestRatio = ratio
+          bestTheme = themes.get(el) ?? 'intro'
+        }
+      }
+      setTheme(bestTheme)
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          ratios.set(
+            entry.target,
+            entry.isIntersecting ? entry.intersectionRatio : 0,
+          )
+        }
+        pick()
+      },
+      {
+        threshold: [0, 0.1, 0.25, 0.4, 0.55, 0.7, 0.85, 1],
+      },
+    )
+
+    for (const el of els) observer.observe(el)
+    pick()
 
     return () => {
-      if (raf) cancelAnimationFrame(raf)
-      window.removeEventListener('scroll', schedule, { capture: true })
-      window.removeEventListener('resize', schedule)
-      document.removeEventListener('visibilitychange', update)
+      observer.disconnect()
     }
   }, [])
 
