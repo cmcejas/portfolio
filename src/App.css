@@ -35,7 +35,8 @@
   }
 
   .site-slide.site-slide--intro-split {
-    scroll-snap-align: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 }
 
