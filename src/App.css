@@ -13,10 +13,9 @@
 }
 
 /*
- * Mobile: disable document scroll-snap entirely.
- * Mixing snap on `html` with (1) a tall intro/tail in normal flow and (2) fixed-height
- * project tiles fights touch scrolling and causes jumps / wrong snap targets (see e.g.
- * w3c/csswg-drafts#9187, common advice to only enable snap from `min-width` breakpoints).
+ * Mobile: snap again with `proximity` (not `mandatory`) so project tiles and tail align
+ * without fighting a tall intro. Intro is not a snap target so you can scroll hero→education
+ * freely; `scroll-snap-stop: normal` avoids sticky per-slide stops on touch.
  */
 @media (max-width: 899px) {
   html {
@@ -26,12 +25,16 @@
 
 @media (max-width: 899px) and (prefers-reduced-motion: no-preference) {
   html {
-    scroll-snap-type: none;
+    scroll-snap-type: y proximity;
   }
 
   .site-slide {
-    scroll-snap-align: none;
+    scroll-snap-align: start;
     scroll-snap-stop: normal;
+  }
+
+  .site-slide.site-slide--intro-split {
+    scroll-snap-align: none;
   }
 }
 
