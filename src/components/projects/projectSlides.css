@@ -62,7 +62,7 @@
 @media (max-width: 899px) and (prefers-reduced-motion: no-preference) {
   .project-slide {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
   }
 }
 
