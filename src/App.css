@@ -12,6 +12,29 @@
   }
 }
 
+/*
+ * Mobile: disable document scroll-snap entirely.
+ * Mixing snap on `html` with (1) a tall intro/tail in normal flow and (2) fixed-height
+ * project tiles fights touch scrolling and causes jumps / wrong snap targets (see e.g.
+ * w3c/csswg-drafts#9187, common advice to only enable snap from `min-width` breakpoints).
+ */
+@media (max-width: 899px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 899px) and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .site-slide {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+}
+
 .site-slide {
   position: relative;
   box-sizing: border-box;
@@ -240,6 +263,46 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     border-left: 1px solid var(--border);
+  }
+}
+
+/*
+ * Narrow viewports: landing + closing slide scroll with the page only (one scrollbar).
+ * Tiles keep in-slide scroll via project-slide__inner.
+ */
+@media (max-width: 899px) {
+  .site-slide.site-slide--intro-split,
+  .site-slide.site-slide--tail {
+    height: auto;
+    max-height: none;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .site-slide--intro-split .site-slide__intro-shell {
+    flex: none;
+    overflow: visible;
+  }
+
+  .site-slide--intro-split .site-slide__intro-split-body {
+    flex: none;
+    overflow: visible;
+  }
+
+  .site-slide--tail .site-slide__frame {
+    flex: none;
+    overflow: visible;
+  }
+}
+
+@supports (height: 100dvh) {
+  @media (max-width: 899px) {
+    .site-slide.site-slide--intro-split,
+    .site-slide.site-slide--tail {
+      min-height: 100dvh;
+      height: auto;
+      max-height: none;
+    }
   }
 }
 
