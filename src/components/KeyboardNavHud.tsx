@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useActiveHudTheme, type HudTheme } from '../hooks/useActiveHudTheme'
+import { isTypingTarget } from '../utils/dom'
 import './keyboardNavHud.css'
 
 const STORAGE_KEY = 'portfolio-keyboard-nav-hud-dismissed'
@@ -9,14 +10,6 @@ const KEY_TO_DIR: Record<string, 'up' | 'down' | 'left' | 'right'> = {
   ArrowDown: 'down',
   ArrowLeft: 'left',
   ArrowRight: 'right',
-}
-
-function isTypingTarget(target: EventTarget | null): boolean {
-  if (!target || !(target instanceof Element)) return false
-  const tag = target.tagName
-  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true
-  if (target.closest('[contenteditable="true"]')) return true
-  return false
 }
 
 function hudThemeClass(theme: HudTheme): string {
@@ -34,15 +27,16 @@ const emptyPressed = {
 export function KeyboardNavHud() {
   const activeTheme = useActiveHudTheme()
   const [show, setShow] = useState(false)
-  const [dismissed, setDismissed] = useState(true)
+  const [dismissed, setDismissed] = useState(() => {
+    try {
+      return localStorage.getItem(STORAGE_KEY) === '1'
+    } catch {
+      return false
+    }
+  })
   const [pressed, setPressed] = useState(emptyPressed)
 
   useEffect(() => {
-    try {
-      setDismissed(localStorage.getItem(STORAGE_KEY) === '1')
-    } catch {
-      setDismissed(false)
-    }
     setShow(true)
   }, [])
 

@@ -7,6 +7,10 @@ import { PollenSlide } from './PollenSlide'
 import { MetricareSlide } from './MetricareSlide'
 import './projectSlides.css'
 
+function assertUnreachable(x: never): never {
+  throw new Error(`Unhandled slide theme: ${x}`)
+}
+
 function SlideForProject({
   project,
   sectionHeading,
@@ -26,7 +30,7 @@ function SlideForProject({
     case 'metricare':
       return <MetricareSlide project={project} sectionHeading={sectionHeading} />
     default:
-      return <MarsSlide project={project} sectionHeading={sectionHeading} />
+      return assertUnreachable(project.slideTheme)
   }
 }
 

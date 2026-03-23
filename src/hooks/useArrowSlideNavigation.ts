@@ -1,15 +1,8 @@
 import { useEffect } from 'react'
+import { isTypingTarget } from '../utils/dom'
 
 const KEYS_NEXT = new Set(['ArrowDown', 'ArrowRight'])
 const KEYS_PREV = new Set(['ArrowUp', 'ArrowLeft'])
-
-function isTypingTarget(target: EventTarget | null): boolean {
-  if (!target || !(target instanceof Element)) return false
-  const tag = target.tagName
-  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true
-  if (target.closest('[contenteditable="true"]')) return true
-  return false
-}
 
 /** Nearest ancestor that scrolls on the y axis (not the document root). */
 function getScrollablePane(el: Element | null): HTMLElement | null {

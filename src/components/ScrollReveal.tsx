@@ -91,7 +91,9 @@ export function ScrollReveal({
 
   return (
     <Tag
-      ref={ref as never}
+      ref={(node) => {
+        ref.current = node
+      }}
       className={`${variantClass}${visible ? ' scroll-reveal--visible' : ''}${className ? ` ${className}` : ''}`}
       style={{
         ...style,

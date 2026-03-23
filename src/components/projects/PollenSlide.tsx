@@ -1,5 +1,6 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense } from 'react'
 import { useSlideActive } from '../../hooks/useSlideActive'
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import type { FeaturedProject } from '../../data/portfolio'
 import { ProjectSlideBody } from './ProjectSlideBody'
 
@@ -12,21 +13,6 @@ const PollenProjectCanvas = lazy(() =>
 type Props = {
   project: FeaturedProject
   sectionHeading?: string
-}
-
-function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(() =>
-    typeof window !== 'undefined'
-      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      : false,
-  )
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const onChange = () => setReduced(mq.matches)
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
-  }, [])
-  return reduced
 }
 
 /**
