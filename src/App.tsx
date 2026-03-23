@@ -118,12 +118,6 @@ function App() {
       >
         <div className="site-slide__intro-shell">
           <header className="header site-slide__intro-header">
-            <a
-              className="logo header-piece header-piece--d0"
-              href="#top"
-            >
-              CM
-            </a>
             <nav
               className="nav header-piece header-piece--d1"
               aria-label="Primary"

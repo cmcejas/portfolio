@@ -80,7 +80,7 @@ export const featuredProjects = [
     description:
       'Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends—with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Blackout and work across mobile, backend, and web.',
     tech:
-      'Native iOS and Android (Swift, Kotlin) using platform focus and app-limit APIs; cloud backend for sessions, host orchestration, and messaging; real-time layer for chat and announcements; APNs and FCM; universal links and App Links for invites; web for onboarding, accounts, and company presence',
+      'Native iOS and Android (Swift, Kotlin) with focus/app-limit APIs, plus cloud backend, real-time chat, APNs/FCM notifications, and invite links.',
     links: {
       repo: null,
       live: 'https://blackout.codes',
