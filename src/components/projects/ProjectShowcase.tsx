@@ -18,7 +18,8 @@ function SlideForProject({
   project: FeaturedProject
   sectionHeading?: string
 }) {
-  switch (project.slideTheme) {
+  const { slideTheme } = project
+  switch (slideTheme) {
     case 'mars':
       return <MarsSlide project={project} sectionHeading={sectionHeading} />
     case 'blackout':
@@ -30,7 +31,7 @@ function SlideForProject({
     case 'metricare':
       return <MetricareSlide project={project} sectionHeading={sectionHeading} />
     default:
-      return assertUnreachable(project.slideTheme)
+      return assertUnreachable(slideTheme)
   }
 }
 

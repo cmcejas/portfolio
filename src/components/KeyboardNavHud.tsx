@@ -26,7 +26,7 @@ const emptyPressed = {
 
 export function KeyboardNavHud() {
   const activeTheme = useActiveHudTheme()
-  const [show, setShow] = useState(false)
+  const [show] = useState(() => typeof window !== 'undefined')
   const [dismissed, setDismissed] = useState(() => {
     try {
       return localStorage.getItem(STORAGE_KEY) === '1'
@@ -35,10 +35,6 @@ export function KeyboardNavHud() {
     }
   })
   const [pressed, setPressed] = useState(emptyPressed)
-
-  useEffect(() => {
-    setShow(true)
-  }, [])
 
   useEffect(() => {
     const onDown = (e: KeyboardEvent) => {
