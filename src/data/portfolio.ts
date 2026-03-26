@@ -69,7 +69,7 @@ export const featuredProjects = [
     tech: 'React, Three.js, FastAPI, AWS Bedrock, DynamoDB, JavaScript, Python',
     links: {
       repo: 'https://github.com/mcrowley19/mars-food-simulation',
-      live: 'https://sol450.xyz',
+      live: 'https://youtu.be/oY_2HvcdY9s?si=OrbiuFokMof7lJzg',
       more: null,
     },
   },
