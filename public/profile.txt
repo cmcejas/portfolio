@@ -7,7 +7,7 @@ Location: Greater Philadelphia / Dublin
 Work authorization: U.S. Citizen with full work authorization in the United States
 GitHub: https://github.com/cmcejas
 LinkedIn: https://linkedin.com/in/cmcejas
-Resume: https://cmcejas.dev/carlos-cejas-resume.pdf
+Resume: https://cmcejas.dev/resume.pdf
 
 Education
 - Trinity College Dublin - BSc/MSc Computer Science (Integrated Masters), 2025 - 2030

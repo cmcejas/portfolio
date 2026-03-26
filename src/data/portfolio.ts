@@ -13,7 +13,7 @@ export const site = {
     linkedin: 'https://linkedin.com/in/cmcejas',
     site: 'https://cmcejas.dev',
   },
-  resumePath: '/carlos-cejas-resume.pdf',
+  resumePath: '/resume.pdf',
 } as const
 
 export const education = [
