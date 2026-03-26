@@ -70,6 +70,7 @@ export const featuredProjects = [
     links: {
       repo: 'https://github.com/mcrowley19/mars-food-simulation',
       live: 'https://youtu.be/oY_2HvcdY9s?si=OrbiuFokMof7lJzg',
+      liveLabel: 'Demo video',
       more: null,
     },
   },
