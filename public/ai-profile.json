@@ -127,5 +127,69 @@
       "label": "High school",
       "items": "Science Olympiad (Selected), NHS Member, DECA 2nd Place MTDM, Youth & Government Treasurer"
     }
-  ]
+  ],
+  "beyondCode": {
+    "favoriteTracks": [
+      {
+        "title": "Triton",
+        "artists": "Chucho Valdés, Su Quinteto",
+        "genres": "Latin jazz, jazz",
+        "spotify": "https://open.spotify.com/track/0Eo24viwNLA3gPFTNPiNGR"
+      },
+      {
+        "title": "Gil",
+        "artists": "Milo j, Trueno",
+        "genres": "Latin hip-hop, trap",
+        "spotify": "https://open.spotify.com/track/5jgmQkVypORb3enASCxjYs"
+      },
+      {
+        "title": "Anybody",
+        "artists": "Burna Boy",
+        "genres": "Afrobeats, Afro-fusion",
+        "spotify": "https://open.spotify.com/track/7iCSfoLBuenTKZoWIgqY9Q"
+      }
+    ],
+    "favoriteAlbum": {
+      "title": "EL ÚLTIMO BAILE",
+      "artist": "Trueno",
+      "spotify": "https://open.spotify.com/album/3EWJoKrG9XnCjvAPzkQZ88"
+    },
+    "artVisitNote": "I got to see both of these in person at The Met.",
+    "favoritePaintings": [
+      {
+        "displayTitle": "The Artist's Uncle, as a Monk",
+        "catalogTitle": "Antoine Dominique Sauveur Aubert (born 1817), the Artist's Uncle, as a Monk",
+        "artist": "Paul Cézanne",
+        "year": "1866",
+        "medium": "Oil on canvas",
+        "href": "https://www.metmuseum.org/art/collection/search/435869",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT1977.jpg",
+        "linkLabel": "The Met"
+      },
+      {
+        "displayTitle": "Umbral",
+        "catalogTitle": "Umbral",
+        "artist": "Wifredo Lam",
+        "year": "1950",
+        "medium": "Oil on canvas",
+        "href": "https://www.artsy.net/artwork/wifredo-lam-umbral",
+        "imageUrl": "/art/umbral.png",
+        "linkLabel": "Artsy"
+      }
+    ],
+    "favoriteBook": {
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "coverPath": "/art/the-stranger.jpg"
+    },
+    "sports": {
+      "footballLabel": "Football (soccer)",
+      "footballClub": "F.C. Barcelona",
+      "footballImagePath": "/art/camp-nou.jpg",
+      "footballImageLink": "https://commons.wikimedia.org/wiki/File:2014._Camp_Nou._M%C3%A9s_que_un_club._Barcelona_B40.jpg",
+      "formula1": "Carlos Sainz",
+      "formula1ImagePath": "https://hips.hearstapps.com/hmg-prod/images/race-winner-carlos-sainz-of-spain-and-ferrari-celebrates-in-news-photo-1730068246.jpg?crop=0.668xw:1.00xh;0.226xw,0&resize=1200:*",
+      "formula1ImageLink": "https://hips.hearstapps.com/hmg-prod/images/race-winner-carlos-sainz-of-spain-and-ferrari-celebrates-in-news-photo-1730068246.jpg?crop=0.668xw:1.00xh;0.226xw,0&resize=1200:*"
+    }
+  }
 }

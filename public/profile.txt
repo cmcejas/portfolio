@@ -63,3 +63,10 @@ Skills
 Activities
 - Trinity: Computer Science Society, Formula Trinity, Philosophical Society, Tennis Society
 - High school: Science Olympiad (Selected), NHS Member, DECA 2nd Place MTDM, Youth & Government Treasurer
+
+Beyond code (personal)
+- Favorite tracks (Spotify): Triton (Latin jazz, jazz) — Chucho Valdés, Su Quinteto; Gil (Latin hip-hop, trap) — Milo j, Trueno; Anybody (Afrobeats, Afro-fusion) — Burna Boy
+- Favorite album: EL ÚLTIMO BAILE — Trueno
+- Favorite paintings: Paul Cézanne — The Artist's Uncle, as a Monk (1866), The Met https://www.metmuseum.org/art/collection/search/435869; Wifredo Lam — Umbral (1950), Artsy https://www.artsy.net/artwork/wifredo-lam-umbral — saw both in person at The Met Fifth Avenue
+- Favorite book: The Stranger — Albert Camus (cover image: /art/the-stranger.jpg, Open Library)
+- Sports: Football (soccer) — F.C. Barcelona; Formula 1 — Carlos Sainz. In the portfolio UI, sports photos link to their sources (Camp Nou: Wikimedia Commons file page; Sainz: Hearst-hosted press photo URL).

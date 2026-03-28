@@ -107,7 +107,8 @@
 
 /* Landing + closing slide: white type, near-black base, blue accent (any color scheme). */
 .site-slide--intro-split.site-slide--surface,
-.site-slide--tail.site-slide--surface {
+.site-slide--tail.site-slide--surface,
+.site-slide--personal.site-slide--surface {
   --text: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.74);
   --border: rgba(255, 255, 255, 0.2);
@@ -770,6 +771,515 @@ main#top {
 
 .footer__links a:hover {
   color: var(--accent);
+}
+
+/* Personal / "Beyond the code" slide */
+.site-slide__frame--personal {
+  max-width: 56rem;
+}
+
+.personal-slide__eyebrow {
+  color: var(--accent);
+}
+
+.personal-slide__title {
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+  line-height: 1.15;
+}
+
+.personal-slide__lead {
+  margin: 0 0 1.5rem;
+  max-width: 36rem;
+  line-height: 1.55;
+}
+
+.personal-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.personal-track {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.personal-track:hover {
+  border-color: rgba(110, 179, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.personal-track:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.personal-track__art {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.personal-track__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.personal-track__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem 1rem;
+  align-items: flex-start;
+}
+
+.personal-track__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.personal-track__artists {
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.personal-track__genres {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.personal-track__cta {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.personal-album {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.personal-album:hover {
+  border-color: rgba(110, 179, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.personal-album:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.personal-album__art {
+  flex: 0 0 auto;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.personal-album__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.personal-album__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+.personal-album__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.personal-album__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.personal-album__artist {
+  font-size: 0.95rem;
+}
+
+.personal-album__cta {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.personal-subheading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 1.5rem 0 0.35rem;
+  line-height: 1.2;
+}
+
+.personal-slide__art-note {
+  margin: 0 0 1rem;
+  max-width: 38rem;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.personal-paintings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.personal-painting {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.personal-painting:hover {
+  border-color: rgba(110, 179, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.personal-painting:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.personal-painting__art {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.personal-painting__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.personal-painting__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  text-align: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 20% 20%,
+      rgba(45, 95, 72, 0.55) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 85% 75%,
+      rgba(120, 62, 38, 0.45) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 50% 50%,
+      rgba(18, 22, 28, 0.9) 0%,
+      #0d1014 100%
+    );
+}
+
+.personal-painting__placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 12rem;
+}
+
+.personal-painting__placeholder-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.personal-painting__placeholder-artist {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.personal-painting__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem 1rem;
+  align-items: flex-start;
+  flex: 1 1 auto;
+}
+
+.personal-painting__label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.personal-painting__title {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.personal-painting__meta {
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.personal-painting__cta {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.personal-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.personal-note {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  margin: 0;
+}
+
+.personal-note--reading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem 1rem;
+}
+
+.personal-note__cover {
+  flex: 0 0 auto;
+  width: 5.25rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.personal-note__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 7.5rem;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.personal-note__reading-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.personal-note--reading .personal-note__heading {
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .personal-note--reading {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .personal-note__cover {
+    width: 6.5rem;
+  }
+}
+
+.personal-note--sports .personal-note__heading {
+  margin-bottom: 0.65rem;
+}
+
+.personal-sports {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.personal-sport__photo {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  aspect-ratio: 16 / 10;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.personal-sport__photo:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.personal-sport__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* F1 hero shots are often “tall”; top-align so the crop keeps heads/helmets in frame. */
+.personal-sport__photo--align-top img {
+  object-position: center top;
+}
+
+.personal-sport__caption {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 560px) {
+  .personal-sports {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .personal-sport {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.personal-note__heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.45rem;
+}
+
+.personal-note__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.personal-note__cite {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.personal-note__line {
+  display: block;
+}
+
+.personal-note__line + .personal-note__line {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 720px) {
+  .personal-tracks {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-paintings {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-album {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .personal-album__art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    max-width: 11rem;
+  }
 }
 
 @media (max-width: 640px) {
