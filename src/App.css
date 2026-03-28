@@ -1,11 +1,7 @@
 /*
- * Scroll snap (web.dev/css-scroll-snap): default `y proximity` for touch; upgrade to
- * `mandatory` on the document only for hover-capable desktops (≥900px).
- *
- * ≤768px: no document snap — landing + About scroll freely. Project slides snap inside
- * `.projects-showcase` (see projectSlides.css), not on html.
- *
- * 769–899px: document proximity + optional stack snap; projects still use inner showcase snap.
+ * Scroll snap: desktop uses mandatory on html (≥900px + fine pointer). Touch tablets use
+ * proximity on html. Phones (≤768px): html mandatory so `.project-slide` snaps in page
+ * flow; landing / About / tail have no snap (see ≤768 block). No nested projects scrollport.
  */
 @media (max-width: 899px) {
   html {
@@ -52,14 +48,24 @@
 }
 
 /*
- * Phones (≤768px): no document scroll-snap; landing + About + tail scroll with normal
- * momentum. Clear snap on stack descendants so nothing re-enables snap mid-section.
+ * Phones (≤768px): single page scrollbar. Document snap targets only `.project-slide`
+ * (scroll-snap-align on cards in projectSlides.css). Landing, About, tail: no snap.
  */
 @media (max-width: 768px) {
-  html {
-    scroll-snap-type: none;
-    scroll-padding-top: env(safe-area-inset-top, 0px);
-    scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-snap-type: none;
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
   }
 
   .site-slide {
@@ -339,7 +345,7 @@
     flex-direction: column;
   }
 
-  /* Stack snap only 769–899px; ≤768 uses html snap none (phones). */
+  /* Stack snap only 769–899px; ≤768 uses page mandatory snap on project slides only. */
   @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
     .site-slide-stack--intro-beyond {
       scroll-snap-align: start;

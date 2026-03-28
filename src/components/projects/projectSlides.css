@@ -17,52 +17,7 @@
   gap: 0;
 }
 
-/*
- * ≤899px: document is not mandatory snap (see App.css). A dedicated scrollport here
- * restores one gesture = one project slide, same as desktop, without changing
- * `.project-slide` snap alignment rules.
- */
-@media (max-width: 899px) {
-  @media (prefers-reduced-motion: no-preference) {
-    .projects-showcase {
-      box-sizing: border-box;
-      height: 100svh;
-      min-height: 100svh;
-      max-height: 100svh;
-      overflow-x: hidden;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-y: auto;
-      scroll-snap-type: y mandatory;
-      scroll-padding-top: env(safe-area-inset-top, 0px);
-      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .projects-showcase {
-      box-sizing: border-box;
-      height: 100svh;
-      min-height: 100svh;
-      max-height: 100svh;
-      overflow-x: hidden;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  }
-}
-
-@supports (height: 100dvh) {
-  @media (max-width: 899px) {
-    .projects-showcase {
-      height: 100dvh;
-      min-height: 100dvh;
-      max-height: 100dvh;
-    }
-  }
-}
-
-/* Document scroll snap lives in App.css with `.site-slide` so the whole page shares one rhythm. */
+/* Document scroll snap: App.css (html) + `.project-slide` align; no nested project strip scrollport. */
 
 /* —— Shared slide frame ——
    Exactly one browser viewport tall; overflow hidden so wheel/trackpad advances
@@ -101,6 +56,13 @@
   .project-slide {
     scroll-snap-align: start;
     scroll-snap-stop: normal;
+  }
+
+  /* Phones: one swipe per slide on the page scrollport (matches desktop stop: always). */
+  @media (max-width: 768px) {
+    .project-slide {
+      scroll-snap-stop: always;
+    }
   }
 
   @media (pointer: fine) and (min-width: 900px) and (hover: hover) {
