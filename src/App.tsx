@@ -111,6 +111,7 @@ function App() {
 
   return (
     <>
+      {/* Viewport scroll-snap for full-height slides: see App.css (disabled ≤768px for touch). */}
       <main id="top">
         <div
           className="site-slide site-slide--surface site-slide--intro-split"

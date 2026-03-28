@@ -1,6 +1,5 @@
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Stars } from '@react-three/drei'
-import { Suspense, useEffect, useMemo, useRef } from 'react'
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 
 /** Same asset path as mcrowley19/mars-food-simulation `frontend/public/mars-texture.jpg` */
@@ -61,6 +60,50 @@ function MarsWithSwoosh({ active }: { active: boolean }) {
   )
 }
 
+function buildStarPositions(n: number): Float32Array {
+  const arr = new Float32Array(n * 3)
+  for (let i = 0; i < n; i++) {
+    const radius = 75 + Math.random() * 55
+    const u = Math.random()
+    const v = Math.random()
+    const theta = 2 * Math.PI * u
+    const phi = Math.acos(2 * v - 1)
+    arr[i * 3] = radius * Math.sin(phi) * Math.cos(theta)
+    arr[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta)
+    arr[i * 3 + 2] = radius * Math.cos(phi)
+  }
+  return arr
+}
+
+/** Lightweight substitute for @react-three/drei Stars (drops the drei dependency). */
+function MarsStarfield() {
+  const ref = useRef<THREE.Points>(null)
+  const [positions] = useState(() => buildStarPositions(4000))
+
+  useFrame((_, delta) => {
+    if (ref.current) ref.current.rotation.y += delta * 0.052
+  })
+
+  return (
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        color="#ccd6e8"
+        size={0.038}
+        sizeAttenuation
+        transparent
+        opacity={0.88}
+        depthWrite={false}
+      />
+    </points>
+  )
+}
+
 type Props = {
   active: boolean
   className?: string
@@ -86,15 +129,7 @@ export function MarsProjectCanvas({ active, className }: Props) {
       <Suspense fallback={null}>
         <ambientLight intensity={0.4} color="#5c2838" />
         <directionalLight position={[3, 1.2, 4]} intensity={2.4} color="#ffaa88" />
-        <Stars
-          radius={95}
-          depth={48}
-          count={4500}
-          factor={2.8}
-          saturation={0}
-          fade
-          speed={0.35}
-        />
+        <MarsStarfield />
         <MarsWithSwoosh active={active} />
       </Suspense>
     </Canvas>

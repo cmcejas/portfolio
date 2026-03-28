@@ -2,6 +2,10 @@
  * Scroll snap (web.dev/css-scroll-snap): default `y proximity` for any device with
  * in-section or nested scroll; upgrade to `mandatory` only for hover-capable desktops.
  * Document `mandatory` + touch often traps users (nested scroll, dynamic toolbars).
+ *
+ * ≤768px: no document snap — free vertical scroll on intro / beyond / tail (Safari iOS).
+ * Project slide styles live in projectSlides.css (unchanged); they do not snap when the
+ * document is not a snap container.
  */
 @media (max-width: 899px) {
   html {
@@ -38,6 +42,24 @@
 
     .site-slide.site-slide--intro-split {
       scroll-snap-align: start;
+    }
+  }
+
+  /* Mobile: drop document snap so nested panels + upward scroll work on iOS Safari. */
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: none;
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .site-slide {
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+
+    .site-slide.site-slide--intro-split {
+      scroll-snap-align: none;
     }
   }
 }
@@ -188,6 +210,7 @@
 .site-slide__intro-header.header {
   flex-shrink: 0;
   padding: var(--page-pad);
+  padding-top: max(var(--page-pad), env(safe-area-inset-top, 0px));
   padding-bottom: 1.15rem;
   margin-bottom: 0;
 }
@@ -300,6 +323,38 @@
   .site-slide--tail .site-slide__frame {
     flex: none;
     overflow: visible;
+  }
+
+  /* Intro header: column stack so Resume + nav don’t fight for one row on phones */
+  .site-slide__intro-header.header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+  }
+
+  .site-slide__intro-header .nav {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    order: 2;
+  }
+
+  .site-slide__intro-header .nav a {
+    padding: 0.35rem 0;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-slide__intro-header .btn--small {
+    order: 1;
+    align-self: flex-end;
+    margin-left: 0;
+    flex-shrink: 0;
   }
 }
 
@@ -1282,15 +1337,3 @@ main#top {
   }
 }
 
-@media (max-width: 640px) {
-  .nav {
-    order: 3;
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .header .btn--small {
-    margin-left: auto;
-  }
-}
