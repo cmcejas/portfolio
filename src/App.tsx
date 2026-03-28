@@ -111,7 +111,7 @@ function App() {
 
   return (
     <>
-      {/* Viewport scroll-snap: see App.css (intro + Beyond stack on narrow viewports). */}
+      {/* Scroll-snap: App.css (document) + projectSlides.css (projects strip ≤899px). */}
       <main id="top">
         <div className="site-slide-stack site-slide-stack--intro-beyond">
           <div

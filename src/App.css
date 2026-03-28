@@ -1,11 +1,11 @@
 /*
- * Scroll snap (web.dev/css-scroll-snap): default `y proximity` for any device with
- * in-section or nested scroll; upgrade to `mandatory` only for hover-capable desktops.
- * Document `mandatory` + touch often traps users (nested scroll, dynamic toolbars).
+ * Scroll snap (web.dev/css-scroll-snap): default `y proximity` for touch; upgrade to
+ * `mandatory` on the document only for hover-capable desktops (≥900px).
  *
- * Narrow + ≤768px: intro + Beyond share one scroll unit (`.site-slide-stack--intro-beyond`);
- * document uses y proximity so the first `.project-slide` (e.g. Sol-450) snaps after the stack.
- * Tail `.site-slide` stays snap-free on small screens for easier upward scroll.
+ * ≤768px: no document snap — landing + About scroll freely. Project slides snap inside
+ * `.projects-showcase` (see projectSlides.css), not on html.
+ *
+ * 769–899px: document proximity + optional stack snap; projects still use inner showcase snap.
  */
 @media (max-width: 899px) {
   html {
@@ -44,25 +44,55 @@
       scroll-snap-align: start;
     }
   }
-
-  /* Small screens: tail stays off snap targets; intro+Beyond use stack rules in ≤899px block. */
-  @media (max-width: 768px) {
-    html {
-      scroll-snap-type: y proximity;
-      scroll-padding-top: env(safe-area-inset-top, 0px);
-      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-
-    .site-slide.site-slide--tail {
-      scroll-snap-align: none;
-      scroll-snap-stop: normal;
-    }
-  }
 }
 
 /* Desktop: wrapper is layout-transparent so intro + Beyond stay separate viewport slides. */
 .site-slide-stack--intro-beyond {
   display: contents;
+}
+
+/*
+ * Phones (≤768px): no document scroll-snap; landing + About + tail scroll with normal
+ * momentum. Clear snap on stack descendants so nothing re-enables snap mid-section.
+ */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .site-slide {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .site-slide-stack--intro-beyond {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    background:
+      radial-gradient(
+        ellipse 85% 55% at 100% -5%,
+        rgba(110, 179, 255, 0.12) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 45% at -5% 105%,
+        rgba(37, 99, 235, 0.28) 0%,
+        transparent 52%
+      ),
+      #0a0a0c;
+  }
+
+  .site-slide-stack--intro-beyond * {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .site-slide-stack--intro-beyond > .site-slide.site-slide--intro-split.site-slide--surface,
+  .site-slide-stack--intro-beyond > .site-slide.site-slide--personal.site-slide--surface {
+    background: transparent;
+  }
 }
 
 .site-slide {
@@ -309,7 +339,8 @@
     flex-direction: column;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
+  /* Stack snap only 769–899px; ≤768 uses html snap none (phones). */
+  @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
     .site-slide-stack--intro-beyond {
       scroll-snap-align: start;
       scroll-snap-stop: normal;
