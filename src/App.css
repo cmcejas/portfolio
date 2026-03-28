@@ -3,9 +3,9 @@
  * in-section or nested scroll; upgrade to `mandatory` only for hover-capable desktops.
  * Document `mandatory` + touch often traps users (nested scroll, dynamic toolbars).
  *
- * ≤768px: no document snap — free vertical scroll on intro / beyond / tail (Safari iOS).
- * Project slide styles live in projectSlides.css (unchanged); they do not snap when the
- * document is not a snap container.
+ * Narrow + ≤768px: intro + Beyond share one scroll unit (`.site-slide-stack--intro-beyond`);
+ * document uses y proximity so the first `.project-slide` (e.g. Sol-450) snaps after the stack.
+ * Tail `.site-slide` stays snap-free on small screens for easier upward scroll.
  */
 @media (max-width: 899px) {
   html {
@@ -45,23 +45,24 @@
     }
   }
 
-  /* Mobile: drop document snap so nested panels + upward scroll work on iOS Safari. */
+  /* Small screens: tail stays off snap targets; intro+Beyond use stack rules in ≤899px block. */
   @media (max-width: 768px) {
     html {
-      scroll-snap-type: none;
+      scroll-snap-type: y proximity;
       scroll-padding-top: env(safe-area-inset-top, 0px);
       scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
     }
 
-    .site-slide {
+    .site-slide.site-slide--tail {
       scroll-snap-align: none;
       scroll-snap-stop: normal;
     }
-
-    .site-slide.site-slide--intro-split {
-      scroll-snap-align: none;
-    }
   }
+}
+
+/* Desktop: wrapper is layout-transparent so intro + Beyond stay separate viewport slides. */
+.site-slide-stack--intro-beyond {
+  display: contents;
 }
 
 .site-slide {
@@ -302,12 +303,39 @@
  * Tiles keep in-slide scroll via project-slide__inner.
  */
 @media (max-width: 899px) {
+  /* Real box on narrow viewports so intro + Beyond share one scroll-snap unit (not display:contents). */
+  .site-slide-stack--intro-beyond {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-slide-stack--intro-beyond {
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+    }
+
+    .site-slide-stack--intro-beyond > .site-slide {
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+  }
+
+  .site-slide-stack--intro-beyond > .site-slide--personal {
+    border-top: none;
+  }
+
   .site-slide.site-slide--intro-split,
+  .site-slide.site-slide--personal,
   .site-slide.site-slide--tail {
     height: auto;
     max-height: none;
     min-height: 100svh;
     overflow: visible;
+  }
+
+  .site-slide.site-slide--personal {
+    min-height: 0;
   }
 
   .site-slide--intro-split .site-slide__intro-shell {
@@ -317,6 +345,13 @@
 
   .site-slide--intro-split .site-slide__intro-split-body {
     flex: none;
+    overflow: visible;
+  }
+
+  .site-slide--personal .site-slide__frame--scroll {
+    flex: none;
+    min-height: 0;
+    max-height: none;
     overflow: visible;
   }
 
@@ -365,6 +400,10 @@
       min-height: 100dvh;
       height: auto;
       max-height: none;
+    }
+
+    .site-slide.site-slide--personal {
+      min-height: 0;
     }
   }
 }

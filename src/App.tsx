@@ -111,54 +111,55 @@ function App() {
 
   return (
     <>
-      {/* Viewport scroll-snap for full-height slides: see App.css (disabled ≤768px for touch). */}
+      {/* Viewport scroll-snap: see App.css (intro + Beyond stack on narrow viewports). */}
       <main id="top">
-        <div
-          className="site-slide site-slide--surface site-slide--intro-split"
-          data-hud-theme="intro"
-        >
-          <div className="site-slide__intro-shell">
-            <header className="header site-slide__intro-header">
-              <nav
-                className="nav header-piece header-piece--d1"
-                aria-label="Primary"
-              >
-                <a href="#work">Work</a>
-                <a href="#beyond">Beyond</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-              </nav>
-              <a
-                className="btn btn--small header-piece header-piece--d2"
-                href={site.resumePath}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Resume
-              </a>
-            </header>
+        <div className="site-slide-stack site-slide-stack--intro-beyond">
+          <div
+            className="site-slide site-slide--surface site-slide--intro-split"
+            data-hud-theme="intro"
+          >
+            <div className="site-slide__intro-shell">
+              <header className="header site-slide__intro-header">
+                <nav
+                  className="nav header-piece header-piece--d1"
+                  aria-label="Primary"
+                >
+                  <a href="#work">Work</a>
+                  <a href="#beyond">Beyond</a>
+                  <a href="#projects">Projects</a>
+                  <a href="#contact">Contact</a>
+                </nav>
+                <a
+                  className="btn btn--small header-piece header-piece--d2"
+                  href={site.resumePath}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Resume
+                </a>
+              </header>
 
-            <div className="site-slide__intro-split-body">
-              <div className="site-slide__intro-columns">
-                <div className="site-slide__intro-left">{introHero}</div>
-                <ScrollRevealPane className="site-slide__intro-right">
-                  {introWorkEducation}
-                </ScrollRevealPane>
+              <div className="site-slide__intro-split-body">
+                <div className="site-slide__intro-columns">
+                  <div className="site-slide__intro-left">{introHero}</div>
+                  <ScrollRevealPane className="site-slide__intro-right">
+                    {introWorkEducation}
+                  </ScrollRevealPane>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div
-          className="site-slide site-slide--surface site-slide--personal"
-          data-hud-theme="tail"
-        >
-          <ScrollRevealPane className="site-slide__frame site-slide__frame--scroll site-slide__frame--personal">
-            <section
-              className="section section--snap personal-slide"
-              id="beyond"
-              aria-labelledby="beyond-heading"
-            >
+          <div
+            className="site-slide site-slide--surface site-slide--personal"
+            data-hud-theme="tail"
+          >
+            <ScrollRevealPane className="site-slide__frame site-slide__frame--scroll site-slide__frame--personal">
+              <section
+                className="section section--snap personal-slide"
+                id="beyond"
+                aria-labelledby="beyond-heading"
+              >
               <ScrollReveal>
                 <p className="eyebrow personal-slide__eyebrow">Off the clock</p>
                 <h2 id="beyond-heading" className="personal-slide__title">
@@ -395,7 +396,8 @@ function App() {
                 </ScrollReveal>
               </div>
             </section>
-          </ScrollRevealPane>
+            </ScrollRevealPane>
+          </div>
         </div>
 
         <ProjectShowcase />
