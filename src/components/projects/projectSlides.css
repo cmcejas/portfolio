@@ -58,17 +58,17 @@
     scroll-snap-stop: normal;
   }
 
-  /* Phones: one swipe per slide on the page scrollport (matches desktop stop: always). */
-  @media (max-width: 768px) {
-    .project-slide {
-      scroll-snap-stop: always;
-    }
-  }
-
   @media (pointer: fine) and (min-width: 900px) and (hover: hover) {
     .project-slide {
       scroll-snap-stop: always;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .project-slide {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
   }
 }
 

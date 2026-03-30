@@ -48,24 +48,13 @@
 }
 
 /*
- * Phones (≤768px): single page scrollbar. Document snap targets only `.project-slide`
- * (scroll-snap-align on cards in projectSlides.css). Landing, About, tail: no snap.
+ * Phones (≤768px): no scroll-snap anywhere. Keep one free page scroll with momentum.
  */
 @media (max-width: 768px) {
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-snap-type: y mandatory;
-      scroll-padding-top: env(safe-area-inset-top, 0px);
-      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-snap-type: none;
-      scroll-padding-top: env(safe-area-inset-top, 0px);
-      scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
+  html {
+    scroll-snap-type: none;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   .site-slide {

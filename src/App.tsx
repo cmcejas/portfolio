@@ -111,7 +111,7 @@ function App() {
 
   return (
     <>
-      {/* Scroll-snap: App.css (html) + projectSlides.css (.project-slide); phones ≤768px in App.css. */}
+      {/* Scroll-snap: desktop/tablet only; phones ≤768px have free scrolling (no snap). */}
       <main id="top">
         <div className="site-slide-stack site-slide-stack--intro-beyond">
           <div
