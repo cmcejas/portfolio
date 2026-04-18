@@ -504,7 +504,7 @@ function App() {
               variant="subtle"
             >
               <span>
-                © {new Date().getFullYear()} {site.shortName}
+                {site.shortName} · {new Date().getFullYear()}
               </span>
               <span className="footer__links">
                 <a href={site.links.github} target="_blank" rel="noreferrer">

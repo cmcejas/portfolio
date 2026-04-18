@@ -1,6 +1,6 @@
 export const site = {
   name: "Carlos Manuel Cejas",
-  shortName: "Carlos Cejas",
+  shortName: "Carlos Manuel Cejas",
   title: "Computer Science Student",
   tagline:
     "BSc/MSc Computer Science at Trinity College Dublin. I build software across web, mobile, robotics, and AI; from path planning for autonomous racing to multimodal health apps.",
