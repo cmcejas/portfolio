@@ -1,7 +1,6 @@
 /*
- * Scroll snap: desktop uses mandatory on html (≥900px + fine pointer). Touch tablets use
- * proximity on html. Phones (≤768px): html mandatory so `.project-slide` snaps in page
- * flow; landing / About / tail have no snap (see ≤768 block). No nested projects scrollport.
+ * Scroll snap: desktop uses mandatory on html (≥900px + fine pointer). Touch uses proximity.
+ * Phones (≤768px): no scroll-snap (see ≤768 block). Order: intro → projects → About → tail.
  */
 @media (max-width: 899px) {
   html {
@@ -42,11 +41,6 @@
   }
 }
 
-/* Desktop: wrapper is layout-transparent so intro + Beyond stay separate viewport slides. */
-.site-slide-stack--intro-beyond {
-  display: contents;
-}
-
 /*
  * Phones (≤768px): no scroll-snap anywhere. Keep one free page scroll with momentum.
  */
@@ -60,33 +54,6 @@
   .site-slide {
     scroll-snap-align: none;
     scroll-snap-stop: normal;
-  }
-
-  .site-slide-stack--intro-beyond {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-    background:
-      radial-gradient(
-        ellipse 85% 55% at 100% -5%,
-        rgba(110, 179, 255, 0.12) 0%,
-        transparent 55%
-      ),
-      radial-gradient(
-        ellipse 70% 45% at -5% 105%,
-        rgba(37, 99, 235, 0.28) 0%,
-        transparent 52%
-      ),
-      #0a0a0c;
-  }
-
-  .site-slide-stack--intro-beyond * {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-  }
-
-  .site-slide-stack--intro-beyond > .site-slide.site-slide--intro-split.site-slide--surface,
-  .site-slide-stack--intro-beyond > .site-slide.site-slide--personal.site-slide--surface {
-    background: transparent;
   }
 }
 
@@ -328,29 +295,6 @@
  * Tiles keep in-slide scroll via project-slide__inner.
  */
 @media (max-width: 899px) {
-  /* Real box on narrow viewports so intro + Beyond share one scroll-snap unit (not display:contents). */
-  .site-slide-stack--intro-beyond {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Stack snap only 769–899px; ≤768 uses page mandatory snap on project slides only. */
-  @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
-    .site-slide-stack--intro-beyond {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-    }
-
-    .site-slide-stack--intro-beyond > .site-slide {
-      scroll-snap-align: none;
-      scroll-snap-stop: normal;
-    }
-  }
-
-  .site-slide-stack--intro-beyond > .site-slide--personal {
-    border-top: none;
-  }
-
   .site-slide.site-slide--intro-split,
   .site-slide.site-slide--personal,
   .site-slide.site-slide--tail {
