@@ -15,10 +15,12 @@ Education
 
 Experience
 - Path Planning Engineer, Formula Trinity - Autonomous Racing Team, Oct 2025 - Present
+  - Website: https://www.formulatrinity.ie/
   - Develop and refine path-planning algorithms in Python for the autonomous race car subsystem.
   - Analyze and improve ROS-based codebase; test algorithms in Gazebo simulations.
   - Optimize racing lines for higher speeds and reduced lap distance.
 - Web Developer, Parkt - Startup, May 2024 - Sep 2024
+  - Website: https://parkt.app/
   - Led development of company website, building new features and optimizing existing systems.
   - Consulted on operations, branding, and marketing strategies for early-stage growth.
 

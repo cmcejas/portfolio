@@ -30,10 +30,19 @@ export const education = [
   },
 ] as const;
 
-export const experience = [
+export type ExperienceEntry = {
+  role: string
+  org: string
+  orgUrl?: string
+  range: string
+  bullets: readonly string[]
+}
+
+export const experience: readonly ExperienceEntry[] = [
   {
     role: "Path Planning Engineer",
     org: "Formula Trinity – Autonomous Racing Team",
+    orgUrl: "https://www.formulatrinity.ie/",
     range: "Oct 2025 – Present",
     bullets: [
       "Develop and refine path-planning algorithms in Python for the autonomous race car subsystem.",
@@ -44,13 +53,14 @@ export const experience = [
   {
     role: "Web Developer",
     org: "Parkt – Startup",
+    orgUrl: "https://parkt.app/",
     range: "May 2024 – Sep 2024",
     bullets: [
       "Led development of company website, building new features and optimizing existing systems.",
       "Consulted on operations, branding, and marketing strategies for early-stage growth.",
     ],
   },
-] as const;
+]
 
 export type SlideTheme =
   | "mars"

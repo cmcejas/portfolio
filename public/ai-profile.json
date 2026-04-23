@@ -33,6 +33,7 @@
     {
       "role": "Path Planning Engineer",
       "org": "Formula Trinity - Autonomous Racing Team",
+      "orgUrl": "https://www.formulatrinity.ie/",
       "range": "Oct 2025 - Present",
       "bullets": [
         "Develop and refine path-planning algorithms in Python for the autonomous race car subsystem.",
@@ -43,6 +44,7 @@
     {
       "role": "Web Developer",
       "org": "Parkt - Startup",
+      "orgUrl": "https://parkt.app/",
       "range": "May 2024 - Sep 2024",
       "bullets": [
         "Led development of company website, building new features and optimizing existing systems.",

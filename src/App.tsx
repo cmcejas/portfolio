@@ -72,7 +72,15 @@ function App() {
                   <h3>{job.role}</h3>
                   <span className="card__range">{job.range}</span>
                 </div>
-                <p className="card__org">{job.org}</p>
+                <p className="card__org">
+                  {job.orgUrl ? (
+                    <a href={job.orgUrl} target="_blank" rel="noreferrer">
+                      {job.org}
+                    </a>
+                  ) : (
+                    job.org
+                  )}
+                </p>
                 <ul className="bullets">
                   {job.bullets.map((b) => (
                     <li key={b}>{b}</li>
