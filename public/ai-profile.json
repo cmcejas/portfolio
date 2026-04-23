@@ -64,9 +64,9 @@
     },
     {
       "name": "Lockup",
-      "context": "Phone-free with friends - Cofounder",
-      "description": "Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends-with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Lockup and work across mobile, backend, and web.",
-      "tech": "Native iOS and Android (Swift, Kotlin) with focus/app-limit APIs, plus cloud backend, real-time chat, APNs/FCM notifications, and invite links.",
+      "context": "Schools - CEO & Cofounder",
+      "description": "Lockup replaces locked phone pouches with software for phone-free class. Teachers run the period from a web dashboard—policy, class sessions, and controls in the browser—while students join with one QR scan on the phone they already carry. Native iOS (Family Controls) and Android lockouts keep focus for the session; session state makes compliance visible without a hallway line. Built for K–12 operations, not ad revenue. I am CEO and cofounder, working across product, mobile, backend, and the school-facing web stack.",
+      "tech": "Web dashboard (teacher and admin), native iOS and Android (Swift, Kotlin) with Family Controls and device policy APIs, cloud backend, session and school data, APNs/FCM for operational notifications",
       "links": {
         "repo": null,
         "live": "https://lockup-app.com",

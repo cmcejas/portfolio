@@ -30,9 +30,9 @@ Featured Projects
   - Repo: https://github.com/mcrowley19/mars-food-simulation
   - Live: https://sol450.xyz
 - Lockup
-  - Context: Phone-free with friends - Cofounder
-  - Description: Group phone-free sessions with real app blocking on iOS and Android.
-  - Tech: Swift, Kotlin, app-limit APIs, cloud backend, real-time chat, APNs/FCM
+  - Context: Schools - CEO & Cofounder
+  - Description: B2B for K-12: web dashboard for teachers, QR class join, native iOS/Android lockouts instead of phone pouches.
+  - Tech: Web dashboard, Swift, Kotlin, Family Controls and device policy APIs, cloud backend, APNs/FCM
   - Live: https://lockup-app.com
 - AI Dungeon Master
   - Context: Claude Builder Club @ TCD Hackathon - Dec 2025
