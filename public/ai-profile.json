@@ -63,18 +63,15 @@
       }
     },
     {
-      "name": "Blackout",
+      "name": "Lockup",
       "context": "Phone-free with friends - Cofounder",
-      "description": "Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends-with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Blackout and work across mobile, backend, and web.",
+      "description": "Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends-with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Lockup and work across mobile, backend, and web.",
       "tech": "Native iOS and Android (Swift, Kotlin) with focus/app-limit APIs, plus cloud backend, real-time chat, APNs/FCM notifications, and invite links.",
       "links": {
         "repo": null,
-        "live": "https://blackout.codes",
-        "liveLabel": "blackout.codes",
-        "more": {
-          "label": "Blackout Codes on LinkedIn",
-          "href": "https://www.linkedin.com/company/blackout-codes/"
-        }
+        "live": "https://lockup-app.com",
+        "liveLabel": "lockup-app.com",
+        "more": null
       }
     },
     {

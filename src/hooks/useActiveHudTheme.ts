@@ -4,7 +4,7 @@ export type HudTheme =
   | 'intro'
   | 'tail'
   | 'mars'
-  | 'blackout'
+  | 'lockup'
   | 'dungeon'
   | 'pollen'
   | 'metricare'
@@ -15,7 +15,7 @@ function readTheme(el: Element): HudTheme {
     v === 'intro' ||
     v === 'tail' ||
     v === 'mars' ||
-    v === 'blackout' ||
+    v === 'lockup' ||
     v === 'dungeon' ||
     v === 'pollen' ||
     v === 'metricare'

@@ -1,7 +1,7 @@
 import { featuredProjects } from '../../data/portfolio'
 import type { FeaturedProject } from '../../data/portfolio'
 import { MarsSlide } from './MarsSlide'
-import { BlackoutSlide } from './BlackoutSlide'
+import { LockupSlide } from './LockupSlide'
 import { DungeonSlide } from './DungeonSlide'
 import { PollenSlide } from './PollenSlide'
 import { MetricareSlide } from './MetricareSlide'
@@ -22,8 +22,8 @@ function SlideForProject({
   switch (slideTheme) {
     case 'mars':
       return <MarsSlide project={project} sectionHeading={sectionHeading} />
-    case 'blackout':
-      return <BlackoutSlide project={project} sectionHeading={sectionHeading} />
+    case 'lockup':
+      return <LockupSlide project={project} sectionHeading={sectionHeading} />
     case 'dungeon':
       return <DungeonSlide project={project} sectionHeading={sectionHeading} />
     case 'pollen':

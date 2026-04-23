@@ -140,8 +140,8 @@
     0 12px 38px var(--hud-outer);
 }
 
-/* Blackout: monochrome only (no neon) — matches phone-free / focus aesthetic */
-.keyboard-nav-hud--blackout {
+/* Lockup: monochrome only (no neon) — matches phone-free / focus aesthetic */
+.keyboard-nav-hud--lockup {
   --hud-accent: #f0f0f0;
   --hud-label: #ffffff;
   --hud-bracket: #e0e0e0;

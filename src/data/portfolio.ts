@@ -54,7 +54,7 @@ export const experience = [
 
 export type SlideTheme =
   | "mars"
-  | "blackout"
+  | "lockup"
   | "dungeon"
   | "pollen"
   | "metricare";
@@ -76,20 +76,17 @@ export const featuredProjects = [
     },
   },
   {
-    name: "Blackout",
-    slideTheme: "blackout" satisfies SlideTheme,
+    name: "Lockup",
+    slideTheme: "lockup" satisfies SlideTheme,
     context: "Phone-free with friends · Cofounder",
     description:
-      "Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends—with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Blackout and work across mobile, backend, and web.",
+      "Group phone-free sessions with real app blocking: a host shares a link or QR, sets the end time and optional breaks, and joiners stay locked until the session ends—with in-session chat, host announcements, and push when you need updates without opening other apps. One product on iOS and Android. I cofounded Lockup and work across mobile, backend, and web.",
     tech: "Native iOS and Android (Swift, Kotlin) with focus/app-limit APIs, plus cloud backend, real-time chat, APNs/FCM notifications, and invite links.",
     links: {
       repo: null,
-      live: "https://blackout.codes",
-      liveLabel: "blackout.codes",
-      more: {
-        label: "Blackout Codes on LinkedIn",
-        href: "https://www.linkedin.com/company/blackout-codes/",
-      },
+      live: "https://lockup-app.com",
+      liveLabel: "lockup-app.com",
+      more: null,
     },
   },
   {
@@ -133,7 +130,18 @@ export const featuredProjects = [
   },
 ] as const;
 
-export type FeaturedProject = (typeof featuredProjects)[number];
+/** Explicit so `more` can be a link object when present (inferred const would narrow to `null` only). */
+export type ProjectLinks = {
+  repo: string | null
+  live: string | null
+  liveLabel?: string
+  more: { label: string; href: string } | null
+}
+
+export type FeaturedProject = Omit<
+  (typeof featuredProjects)[number],
+  'links'
+> & { links: ProjectLinks }
 
 export const skills = {
   languages: "Python, TypeScript, JavaScript, Java, HTML/CSS, SQL, Bash",
