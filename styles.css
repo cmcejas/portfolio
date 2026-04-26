@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap");
+
+:root {
+  --bg: #f6f1e6;
+  --text: #000000;
+  --muted: #3f3a34;
+  --line: #000000;
+  --accent: #000000;
+  --red: #df321f;
+  --blue: #0057b8;
+  --yellow: #f2c300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  scroll-behavior: auto;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  filter: blur(0.15px);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+header {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 1rem 0 0 1rem;
+  border-left: 0.75rem solid var(--blue);
+}
+
+pre {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font: inherit;
+  line-height: 1.2;
+  white-space: pre-wrap;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+  min-height: 1.3em;
+  font-size: clamp(1.75rem, 5.2vw, 3.15rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+h1::after {
+  content: "_";
+  color: var(--accent);
+  animation: blink-cursor 900ms steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+h2::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: var(--red);
+  border: 2px solid var(--text);
+}
+
+section {
+  padding: 2rem 0;
+  border-top: 3px solid var(--text);
+}
+
+a {
+  color: LinkText;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  transition: background-color 150ms ease, box-shadow 150ms ease,
+    color 150ms ease, filter 150ms ease, opacity 150ms ease,
+    transform 150ms ease;
+}
+
+a:hover,
+a:focus,
+a[aria-current="page"] {
+  background: var(--yellow);
+  box-shadow: 0.18rem 0.18rem 0 var(--text);
+  color: var(--text);
+  outline: 0;
+  transform: translate(-1px, -1px);
+}
+
+.tagline {
+  max-width: 680px;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.page-links {
+  font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 800;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--line);
+}
+
+.lead {
+  max-width: 76ch;
+}
+
+.plain-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plain-list li {
+  margin: 0;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--line);
+  transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
+}
+
+.entry:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.entry-mark {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 2px solid var(--text);
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  background: var(--yellow);
+  box-shadow: 0.32rem 0.32rem 0 var(--text);
+}
+
+.entry:nth-child(3n + 2) .entry-mark {
+  background: var(--red);
+}
+
+.entry:nth-child(3n + 3) .entry-mark {
+  background: var(--blue);
+}
+
+.entry-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.45rem;
+}
+
+.entry-titleline {
+  margin-bottom: 0.25rem;
+}
+
+.project-name {
+  font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.project-name,
+.role {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.context,
+.range,
+.meta {
+  color: var(--muted);
+}
+
+.details {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.launch-note {
+  max-width: 62ch;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.skill-groups {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 980px;
+}
+
+.skill-groups p {
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--line);
+}
+
+.skill-label {
+  font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.skills,
+.contact-lines {
+  max-width: 86ch;
+}
+
+.contact-lines p + p {
+  margin-top: 0.35rem;
+}
+
+.small-note {
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+@supports selector(:has(*)) {
+  .page-links:has(a:hover) a:not(:hover),
+  .page-links:has(a:focus-visible) a:not(:focus-visible),
+  .contact-lines:has(a:hover) a:not(:hover),
+  .contact-lines:has(a:focus-visible) a:not(:focus-visible) {
+    filter: blur(1px);
+    opacity: 0.42;
+  }
+
+  .plain-list:has(.entry:hover) .entry:not(:hover),
+  .plain-list:has(.entry:focus-within) .entry:not(:focus-within) {
+    filter: blur(1.2px);
+    opacity: 0.38;
+  }
+
+  .plain-list .entry:hover,
+  .plain-list .entry:focus-within {
+    transform: translateX(0.18rem);
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    width: min(100% - 1.25rem, 920px);
+    padding-top: 2.5rem;
+  }
+
+  section {
+    padding: 1.6rem 0;
+  }
+
+  .page-links {
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+  }
+
+  .entry {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+
+  .entry-mark {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  body::after {
+    display: none;
+  }
+}

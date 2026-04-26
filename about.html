@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About Carlos Manuel Cejas: background, education, skills, and personal details."
+    />
+    <meta name="author" content="Carlos Manuel Cejas" />
+    <meta name="theme-color" content="#f6f1e6" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="About Carlos Manuel Cejas" />
+    <meta
+      property="og:description"
+      content="Born and raised in Philadelphia, son of Cuban immigrants, now studying computer science at Trinity College Dublin."
+    />
+    <meta property="og:image" content="./favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="About Carlos Manuel Cejas" />
+    <meta
+      name="twitter:description"
+      content="Born and raised in Philadelphia, son of Cuban immigrants, now studying computer science at Trinity College Dublin."
+    />
+    <meta name="twitter:image" content="./favicon.svg" />
+    <title>About | Carlos Manuel Cejas</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap");
+
+      :root {
+        --bg: #f6f1e6;
+        --text: #000000;
+        --muted: #3f3a34;
+        --line: #000000;
+        --accent: #000000;
+        --red: #df321f;
+        --blue: #0057b8;
+        --yellow: #f2c300;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        isolation: isolate;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+          linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+        background-size: 4rem 4rem;
+        filter: blur(0.15px);
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        width: min(980px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+        font-size: clamp(1.4rem, 4.2vw, 2.3rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        font-weight: 800;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+        margin-bottom: 1rem;
+        color: var(--accent);
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+
+      h2::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background: var(--red);
+        border: 2px solid var(--text);
+      }
+
+      section {
+        padding: 2rem 0;
+        border-top: 3px solid var(--text);
+      }
+
+      header {
+        position: relative;
+        margin-bottom: 3rem;
+        padding: 1rem 0 0 1rem;
+        border-left: 0.75rem solid var(--blue);
+      }
+
+      a {
+        color: LinkText;
+        text-decoration: underline;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.16em;
+        transition: background-color 150ms ease, box-shadow 150ms ease,
+          color 150ms ease, filter 150ms ease, opacity 150ms ease,
+          transform 150ms ease;
+      }
+
+      a:hover,
+      a:focus,
+      a[aria-current="page"] {
+        background: var(--yellow);
+        box-shadow: 0.18rem 0.18rem 0 var(--text);
+        color: var(--text);
+        outline: 0;
+        transform: translate(-1px, -1px);
+      }
+
+      .lead {
+        max-width: 76ch;
+      }
+
+      .small-note {
+        margin-top: 1.2rem;
+        color: var(--muted);
+      }
+
+      .page-links {
+        font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+        font-weight: 800;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        justify-content: space-between;
+        margin-bottom: 2.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid var(--line);
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+
+      .media-grid--small {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+
+      .media-item {
+        margin: 0;
+        padding-top: 0;
+        transition: filter 150ms ease, opacity 150ms ease,
+          transform 150ms ease;
+      }
+
+      .media-item a {
+        display: block;
+      }
+
+      .media-item img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        border: 2px solid var(--text);
+        object-fit: cover;
+        box-shadow: 0.4rem 0.4rem 0 var(--yellow);
+        transition: filter 160ms ease, transform 160ms ease;
+      }
+
+      .media-item:nth-child(3n + 2) img {
+        box-shadow: 0.4rem 0.4rem 0 var(--red);
+      }
+
+      .media-item:nth-child(3n + 3) img {
+        box-shadow: 0.4rem 0.4rem 0 var(--blue);
+      }
+
+      .media-item a:hover img,
+      .media-item a:focus img {
+        filter: contrast(1.08);
+        transform: translate(-2px, -2px);
+      }
+
+      .media-item--book img {
+        background: #f5f5f5;
+        object-fit: contain;
+        padding: 0.5rem;
+      }
+
+      .media-caption {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .media-title {
+        display: block;
+        font-family: "Syne", "JetBrains Mono", ui-monospace, monospace;
+        font-weight: 700;
+      }
+
+      .media-meta {
+        display: block;
+        color: var(--muted);
+      }
+
+      @supports selector(:has(*)) {
+        .page-links:has(a:hover) a:not(:hover),
+        .page-links:has(a:focus-visible) a:not(:focus-visible) {
+          filter: blur(1px);
+          opacity: 0.42;
+        }
+
+        .media-grid:has(.media-item:hover) .media-item:not(:hover),
+        .media-grid:has(.media-item:focus-within) .media-item:not(:focus-within) {
+          filter: blur(1.2px);
+          opacity: 0.38;
+        }
+
+        .media-grid .media-item:hover,
+        .media-grid .media-item:focus-within {
+          transform: translateY(-0.12rem);
+        }
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 1.25rem, 920px);
+          padding-top: 2rem;
+        }
+
+        section {
+          padding: 1.6rem 0;
+        }
+
+        .media-grid,
+        .media-grid--small {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="page-links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html" aria-current="page">About</a>
+        <a href="./resume.pdf">Resume</a>
+      </nav>
+
+      <header>
+        <h1>About</h1>
+      </header>
+
+      <section aria-labelledby="about-heading">
+        <h2 id="about-heading">Carlos Manuel Cejas</h2>
+        <p class="lead">
+          I was born and raised in Philadelphia, the son of two Cuban
+          immigrants. Now I study computer science at Trinity College Dublin.
+        </p>
+        <p class="small-note">
+          A lot of people saw moving from the US to Dublin for CS as a step
+          down. I saw a market I wanted to be in: a growing tech scene, serious
+          builders, and a place where being American is still unusual enough to
+          open doors. I did not just pick a school. I picked a market where I
+          could have an edge.
+        </p>
+      </section>
+
+      <section aria-labelledby="music-heading">
+        <h2 id="music-heading">Music</h2>
+        <div class="media-grid media-grid--small">
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://open.spotify.com/track/0Eo24viwNLA3gPFTNPiNGR">
+              <img
+                src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0245348b8861cfa39d4da63bb2"
+                alt="Cover art for Triton"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Triton</span>
+                <span class="media-meta">Chucho Valdés</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://open.spotify.com/track/5jgmQkVypORb3enASCxjYs">
+              <img
+                src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d56059181de93d90817e8b0b"
+                alt="Cover art for Gil"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Gil</span>
+                <span class="media-meta">Milo j, Trueno</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://open.spotify.com/track/7iCSfoLBuenTKZoWIgqY9Q">
+              <img
+                src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02a9c13c1a5538f87146ac8ca5"
+                alt="Cover art for Anybody"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Anybody</span>
+                <span class="media-meta">Burna Boy</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://open.spotify.com/album/3EWJoKrG9XnCjvAPzkQZ88">
+              <img
+                src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020188bbcf0757bafdc3342ff9"
+                alt="Cover art for EL ULTIMO BAILE"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">EL ÚLTIMO BAILE</span>
+                <span class="media-meta">Trueno</span>
+              </figcaption>
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="paintings-heading">
+        <h2 id="paintings-heading">Art / Book / Sport</h2>
+        <div class="media-grid">
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://www.metmuseum.org/art/collection/search/435869">
+              <img
+                src="https://images.metmuseum.org/CRDImages/ep/original/DT1977.jpg"
+                alt="Paul Cezanne, Antoine Dominique Sauveur Aubert, the Artist's Uncle, as a Monk"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Cézanne</span>
+                <span class="media-meta">The Met</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://www.artsy.net/artwork/wifredo-lam-umbral">
+              <img
+                src="./umbral.png"
+                alt="Wifredo Lam, Umbral"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Lam</span>
+                <span class="media-meta">Artsy</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://commons.wikimedia.org/wiki/File:Albert_Camus_1945_(cropped).jpg">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Albert_Camus_1945_%28cropped%29.jpg"
+                alt="Albert Camus portrait"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Camus</span>
+                <span class="media-meta">The Stranger</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://commons.wikimedia.org/wiki/Category:Camp_Nou">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Camp_Nou_aerial_%28cropped%29.jpg"
+                alt="Aerial view of Camp Nou"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">Barça</span>
+                <span class="media-meta">Camp Nou</span>
+              </figcaption>
+            </a>
+          </figure>
+          <figure class="media-item">
+            <a target="_blank" rel="noreferrer" href="https://hips.hearstapps.com/hmg-prod/images/race-winner-carlos-sainz-of-spain-and-ferrari-celebrates-in-news-photo-1730068246.jpg?crop=0.668xw:1.00xh;0.226xw,0&resize=1200:*">
+              <img
+                src="https://hips.hearstapps.com/hmg-prod/images/race-winner-carlos-sainz-of-spain-and-ferrari-celebrates-in-news-photo-1730068246.jpg?crop=0.668xw:1.00xh;0.226xw,0&resize=1200:*"
+                alt="Carlos Sainz celebrating a race win"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="media-caption">
+                <span class="media-title">F1</span>
+                <span class="media-meta">Carlos Sainz</span>
+              </figcaption>
+            </a>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
