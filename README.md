@@ -10,3 +10,4 @@ Static personal site built with plain HTML and CSS.
 - `resume.pdf` — resume linked from the header
 
 Deployed on Vercel as a static site.
+ 
