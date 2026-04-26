@@ -315,7 +315,11 @@ a[aria-current="page"] {
 @media (max-width: 640px) {
   main {
     width: min(100% - 1.25rem, 920px);
-    padding-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  header {
+    margin-bottom: 2.25rem;
   }
 
   section {
