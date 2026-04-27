@@ -42,8 +42,8 @@ body::after {
 body::before {
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
-    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 4rem 4rem;
   filter: blur(0.15px);
 }
@@ -92,6 +92,11 @@ h1::after {
   animation: blink-cursor 900ms steps(1) infinite;
 }
 
+h1.h1--static::after {
+  content: none;
+  animation: none;
+}
+
 @keyframes blink-cursor {
   50% {
     opacity: 0;
@@ -134,14 +139,23 @@ a {
     transform 150ms ease;
 }
 
-a:hover,
-a:focus,
+a:focus-visible,
 a[aria-current="page"] {
   background: var(--yellow);
   box-shadow: 0.18rem 0.18rem 0 var(--text);
   color: var(--text);
   outline: 0;
   transform: translate(-1px, -1px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    background: var(--yellow);
+    box-shadow: 0.18rem 0.18rem 0 var(--text);
+    color: var(--text);
+    outline: 0;
+    transform: translate(-1px, -1px);
+  }
 }
 
 .tagline {
@@ -293,24 +307,27 @@ a[aria-current="page"] {
   color: var(--muted);
 }
 
-@supports selector(:has(*)) {
-  .page-links:has(a:hover) a:not(:hover),
-  .page-links:has(a:focus-visible) a:not(:focus-visible),
-  .contact-lines:has(a:hover) a:not(:hover),
-  .contact-lines:has(a:focus-visible) a:not(:focus-visible) {
-    filter: blur(1px);
-    opacity: 0.42;
-  }
+/* Blur “spotlight” only on real hover (fine pointer) — avoids stuck blur on touch */
+@media (hover: hover) and (pointer: fine) {
+  @supports selector(:has(*)) {
+    .page-links:has(a:hover) a:not(:hover),
+    .page-links:has(a:focus-visible) a:not(:focus-visible),
+    .contact-lines:has(a:hover) a:not(:hover),
+    .contact-lines:has(a:focus-visible) a:not(:focus-visible) {
+      filter: blur(1px);
+      opacity: 0.42;
+    }
 
-  .plain-list:has(.entry:hover) .entry:not(:hover),
-  .plain-list:has(.entry:focus-within) .entry:not(:focus-within) {
-    filter: blur(1.2px);
-    opacity: 0.38;
-  }
+    .plain-list:has(.entry:hover) .entry:not(:hover),
+    .plain-list:has(.entry:focus-within) .entry:not(:focus-within) {
+      filter: blur(1.2px);
+      opacity: 0.38;
+    }
 
-  .plain-list .entry:hover,
-  .plain-list .entry:focus-within {
-    transform: translateX(0.18rem);
+    .plain-list .entry:hover,
+    .plain-list .entry:focus-within {
+      transform: translateX(0.18rem);
+    }
   }
 }
 
@@ -346,4 +363,43 @@ a[aria-current="page"] {
   body::after {
     display: none;
   }
+}
+
+/* —— Resume embed page —— */
+.resume-panel {
+  margin-top: 1rem;
+}
+
+.resume-embed {
+  margin: 0;
+  border: 2px solid var(--text);
+  box-shadow: 0.4rem 0.4rem 0 var(--yellow);
+  background: var(--bg);
+  min-height: min(78vh, 52rem);
+}
+
+.resume-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: min(78vh, 52rem);
+  border: 0;
+}
+
+.resume-actions {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.link-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  vertical-align: baseline;
+}
+
+.link-external svg {
+  flex-shrink: 0;
+  width: 0.95em;
+  height: 0.95em;
 }

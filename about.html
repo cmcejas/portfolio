@@ -78,8 +78,8 @@
         z-index: -1;
         pointer-events: none;
         background:
-          linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
-          linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+          linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+          linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
         background-size: 4rem 4rem;
         filter: blur(0.15px);
       }
@@ -149,14 +149,23 @@
           transform 150ms ease;
       }
 
-      a:hover,
-      a:focus,
+      a:focus-visible,
       a[aria-current="page"] {
         background: var(--yellow);
         box-shadow: 0.18rem 0.18rem 0 var(--text);
         color: var(--text);
         outline: 0;
         transform: translate(-1px, -1px);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        a:hover {
+          background: var(--yellow);
+          box-shadow: 0.18rem 0.18rem 0 var(--text);
+          color: var(--text);
+          outline: 0;
+          transform: translate(-1px, -1px);
+        }
       }
 
       .lead {
@@ -219,10 +228,16 @@
         box-shadow: 0.4rem 0.4rem 0 var(--blue);
       }
 
-      .media-item a:hover img,
-      .media-item a:focus img {
+      .media-item a:focus-visible img {
         filter: contrast(1.08);
         transform: translate(-2px, -2px);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .media-item a:hover img {
+          filter: contrast(1.08);
+          transform: translate(-2px, -2px);
+        }
       }
 
       .media-item--book img {
@@ -248,22 +263,24 @@
         color: var(--muted);
       }
 
-      @supports selector(:has(*)) {
-        .page-links:has(a:hover) a:not(:hover),
-        .page-links:has(a:focus-visible) a:not(:focus-visible) {
-          filter: blur(1px);
-          opacity: 0.42;
-        }
+      @media (hover: hover) and (pointer: fine) {
+        @supports selector(:has(*)) {
+          .page-links:has(a:hover) a:not(:hover),
+          .page-links:has(a:focus-visible) a:not(:focus-visible) {
+            filter: blur(1px);
+            opacity: 0.42;
+          }
 
-        .media-grid:has(.media-item:hover) .media-item:not(:hover),
-        .media-grid:has(.media-item:focus-within) .media-item:not(:focus-within) {
-          filter: blur(1.2px);
-          opacity: 0.38;
-        }
+          .media-grid:has(.media-item:hover) .media-item:not(:hover),
+          .media-grid:has(.media-item:focus-within) .media-item:not(:focus-within) {
+            filter: blur(1.2px);
+            opacity: 0.38;
+          }
 
-        .media-grid .media-item:hover,
-        .media-grid .media-item:focus-within {
-          transform: translateY(-0.12rem);
+          .media-grid .media-item:hover,
+          .media-grid .media-item:focus-within {
+            transform: translateY(-0.12rem);
+          }
         }
       }
 
@@ -298,7 +315,7 @@
       <nav class="page-links" aria-label="Primary">
         <a href="./index.html">Home</a>
         <a href="./about.html" aria-current="page">About</a>
-        <a href="./resume.pdf">Resume</a>
+        <a href="./resume.html">Resume</a>
       </nav>
 
       <header>

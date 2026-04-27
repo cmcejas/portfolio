@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Resume — Carlos Manuel Cejas. PDF viewer with option to open in a new tab."
+    />
+    <meta name="author" content="Carlos Manuel Cejas" />
+    <meta name="theme-color" content="#f6f1e6" />
+    <link rel="canonical" href="https://cmcejas.dev/resume" />
+    <title>Resume | Carlos Manuel Cejas</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <nav class="page-links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./resume.html" aria-current="page">Resume</a>
+      </nav>
+
+      <header>
+        <h1 class="h1--static">Resume</h1>
+        <p class="tagline">Embedded PDF. Use the link below if your browser does not show the file.</p>
+      </header>
+
+      <section aria-label="Resume PDF">
+        <div class="resume-panel">
+          <figure class="resume-embed">
+            <iframe
+              src="./resume.pdf#view=FitH"
+              title="Carlos Manuel Cejas resume (PDF)"
+            ></iframe>
+          </figure>
+          <p class="resume-actions">
+            <a
+              class="link-external"
+              href="./resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open PDF in a new tab
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
