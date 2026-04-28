@@ -7,11 +7,14 @@
       name="description"
       content="About Carlos Manuel Cejas: background, education, skills, and personal details."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Carlos Manuel Cejas" />
     <meta name="theme-color" content="#f6f1e6" />
     <link rel="canonical" href="https://cmcejas.dev/about" />
+    <link rel="sitemap" type="application/xml" href="https://cmcejas.dev/sitemap.xml" />
     <meta property="og:site_name" content="Carlos Manuel Cejas" />
     <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://cmcejas.dev/about" />
     <meta property="og:title" content="About Carlos Manuel Cejas" />
     <meta
@@ -24,6 +27,8 @@
     <meta property="og:image:height" content="1200" />
     <meta property="og:image:alt" content="Carlos Manuel Cejas Bauhaus C favicon" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@cmcejas" />
+    <meta name="twitter:creator" content="@cmcejas" />
     <meta name="twitter:title" content="About Carlos Manuel Cejas" />
     <meta
       name="twitter:description"
@@ -38,6 +43,47 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://cmcejas.dev/#person",
+            "name": "Carlos Manuel Cejas",
+            "url": "https://cmcejas.dev/",
+            "sameAs": [
+              "https://github.com/cmcejas",
+              "https://linkedin.com/in/cmcejas"
+            ]
+          },
+          {
+            "@type": "AboutPage",
+            "@id": "https://cmcejas.dev/about#aboutpage",
+            "url": "https://cmcejas.dev/about",
+            "name": "About | Carlos Manuel Cejas",
+            "description": "Background, education, interests, and personal details for Carlos Manuel Cejas.",
+            "about": {
+              "@id": "https://cmcejas.dev/#person"
+            },
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://cmcejas.dev/#website",
+              "url": "https://cmcejas.dev/",
+              "name": "Carlos Manuel Cejas"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://cmcejas.dev/about#profile",
+            "url": "https://cmcejas.dev/about",
+            "mainEntity": {
+              "@id": "https://cmcejas.dev/#person"
+            }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         --bg: #f6f1e6;
