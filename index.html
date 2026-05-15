@@ -98,10 +98,7 @@
       #word-bg .word-row {
         display: flex;
         white-space: nowrap;
-        animation: scroll-left 30s linear infinite;
-      }
-      #word-bg .word-row span {
-        padding-right: 3rem;
+        animation: scroll-left 120s linear infinite;
       }
       @keyframes scroll-left {
         from { transform: translateX(-50%); }
@@ -420,8 +417,9 @@
         const row = document.createElement('div');
         row.className = 'word-row';
         const text = words.join(' · ') + ' · ';
-        row.innerHTML = `<span>${text}</span><span>${text}</span>`;
-        row.style.animationDelay = `${-Math.random() * 30}s`;
+        const repeated = text.repeat(4);
+        row.innerHTML = `<span>${repeated}</span><span>${repeated}</span>`;
+        row.style.animationDelay = `${-Math.random() * 120}s`;
         wordBg.appendChild(row);
 
         const scene = new THREE.Scene();
