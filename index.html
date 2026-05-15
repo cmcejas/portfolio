@@ -52,6 +52,62 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.172.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.172.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.6s ease;
+        overflow: hidden;
+      }
+      #splash > div {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #splash table {
+        margin: auto;
+      }
+      #word-bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        opacity: 0.12;
+        pointer-events: none;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      #word-bg .word-row {
+        display: flex;
+        white-space: nowrap;
+        animation: scroll-left 30s linear infinite;
+      }
+      #word-bg .word-row span {
+        padding-right: 3rem;
+      }
+      @keyframes scroll-left {
+        from { transform: translateX(-50%); }
+        to { transform: translateX(0); }
+      }
+    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -69,7 +125,6 @@
             "name": "Carlos Manuel Cejas",
             "url": "https://cmcejas.dev/",
             "email": "mailto:carlosmcejas@gmail.com",
-            "telephone": "+12674433427",
             "givenName": "Carlos Manuel",
             "familyName": "Cejas",
             "jobTitle": "Computer Science Student",
@@ -120,7 +175,11 @@
     </script>
   </head>
   <body>
-    <main>
+    <div id="splash" aria-hidden="true">
+      <div id="word-bg"></div>
+    </div>
+
+    <main style="opacity:0;transition:opacity 0.6s ease">
       <nav class="page-links" aria-label="Primary">
         <a href="./index.html" aria-current="page">Home</a>
         <a href="./about.html">About</a>
@@ -317,7 +376,6 @@
         <h2 id="contact-heading">Contact</h2>
         <div class="contact-lines">
           <p>Email: <a href="mailto:carlosmcejas@gmail.com">carlosmcejas@gmail.com</a></p>
-          <p>Phone: <a href="tel:+12674433427">+1 (267) 443-3427</a></p>
           <p>Location: Greater Philadelphia / Dublin</p>
           <p>
             Work authorization: U.S. Citizen with full work authorization in the
@@ -334,16 +392,155 @@
       </section>
     </main>
 
-    <script>
-      const name = document.querySelector("#name");
-      const text = name.dataset.text;
-      name.textContent = "";
+    <script type="module">
+      import * as THREE from 'three';
+      import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
+      import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+      import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-      [...text].forEach((character, index) => {
-        setTimeout(() => {
-          name.textContent += character;
-        }, index * 90);
-      });
+      const splash = document.getElementById('splash');
+      const mainEl = document.querySelector('main');
+      const nameEl = document.querySelector('#name');
+      const nameText = nameEl.dataset.text;
+      nameEl.textContent = '';
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        splash.remove();
+        mainEl.style.opacity = '1';
+        nameEl.textContent = nameText;
+      } else {
+        const words = [
+          'LOCKUP', 'FORMULA TRINITY', 'CLAUDE', 'MCP', 'BEDROCK',
+          'PATH PLANNING', 'AUTONOMOUS', 'RACING', 'AGENTS', 'DUBLIN',
+          'TRINITY COLLEGE', 'PHILADELPHIA', 'CUBAN', 'CEO', 'COFOUNDER',
+          'SOL-450', 'MARS', 'POLLEN CAST', 'METRICARE', 'HACK EUROPE',
+          'ROS', 'GAZEBO', 'FASTAPI', 'REACT', 'TYPESCRIPT', 'PYTHON'
+        ];
+        const wordBg = document.getElementById('word-bg');
+        const row = document.createElement('div');
+        row.className = 'word-row';
+        const text = words.join(' · ') + ' · ';
+        row.innerHTML = `<span>${text}</span><span>${text}</span>`;
+        row.style.animationDelay = `${-Math.random() * 30}s`;
+        wordBg.appendChild(row);
+
+        const scene = new THREE.Scene();
+        const bgColor = getComputedStyle(document.documentElement)
+          .getPropertyValue('--bg').trim() || '#f6f1e6';
+        scene.background = new THREE.Color(0x000000);
+
+        const camera = new THREE.PerspectiveCamera(
+          70, window.innerWidth / window.innerHeight, 1, 1000
+        );
+        const getCameraZ = () => {
+          const w = window.innerWidth;
+          if (w < 400) return 320;
+          if (w < 600) return 300;
+          if (w < 900) return 280;
+          return 250;
+        };
+        camera.position.z = getCameraZ();
+
+        const light1 = new THREE.PointLight(0xffffff, 3, 0, 0);
+        light1.position.set(300, 300, 300);
+        scene.add(light1);
+
+        const light2 = new THREE.PointLight(0xffffff, 1, 0, 0);
+        light2.position.set(-300, -300, -300);
+        scene.add(light2);
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const effect = new AsciiEffect(renderer, ' .:-+*=%@#', { invert: true });
+        effect.setSize(window.innerWidth, window.innerHeight);
+        effect.domElement.style.color = 'var(--text, #000)';
+        effect.domElement.style.backgroundColor = bgColor;
+        effect.domElement.style.fontFamily = '"JetBrains Mono", monospace';
+        effect.domElement.style.lineHeight = '1';
+
+        splash.appendChild(effect.domElement);
+
+        const FONT_URL = 'https://unpkg.com/three@0.172.0/examples/fonts/helvetiker_bold.typeface.json';
+        const loader = new FontLoader();
+        const font = await loader.loadAsync(FONT_URL);
+
+        const isMobile = window.innerWidth < 600;
+        const textSize = isMobile ? 70 : 80;
+        const textDepth = isMobile ? 16 : 20;
+
+        const geometry = new TextGeometry('CMC', {
+          font,
+          size: textSize,
+          depth: textDepth,
+          curveSegments: 8,
+          bevelEnabled: true,
+          bevelThickness: isMobile ? 3 : 4,
+          bevelSize: isMobile ? 1.5 : 2,
+          bevelSegments: 3
+        });
+        geometry.computeBoundingBox();
+        const offset = new THREE.Vector3();
+        geometry.boundingBox.getCenter(offset);
+        geometry.translate(-offset.x, -offset.y, -offset.z);
+
+        const material = new THREE.MeshPhongMaterial({ flatShading: true });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        const onResize = () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.position.z = getCameraZ();
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          effect.setSize(window.innerWidth, window.innerHeight);
+        };
+        window.addEventListener('resize', onResize);
+
+        const startTime = performance.now();
+        const DURATION = 2800;
+        const baseZ = getCameraZ();
+        let animId;
+
+        function animate() {
+          const elapsed = performance.now() - startTime;
+          const t = elapsed / 1000;
+          const progress = elapsed / DURATION;
+          
+          mesh.rotation.y += 0.025;
+          mesh.rotation.x = Math.sin(t * 0.8) * 0.15;
+          
+          const breathe = 1 + Math.sin(t * 3) * 0.05;
+          mesh.scale.set(breathe, breathe, breathe);
+          
+          if (progress > 0.6) {
+            const zoomProgress = (progress - 0.6) / 0.4;
+            camera.position.z = baseZ + zoomProgress * 200;
+          }
+          
+          effect.render(scene, camera);
+
+          if (elapsed < DURATION) {
+            animId = requestAnimationFrame(animate);
+          } else {
+            splash.style.opacity = '0';
+            splash.addEventListener('transitionend', () => {
+              cancelAnimationFrame(animId);
+              window.removeEventListener('resize', onResize);
+              geometry.dispose();
+              material.dispose();
+              renderer.dispose();
+              splash.remove();
+              mainEl.style.opacity = '1';
+              [...nameText].forEach((ch, i) => {
+                setTimeout(() => { nameEl.textContent += ch; }, i * 90);
+              });
+            });
+          }
+        }
+
+        animId = requestAnimationFrame(animate);
+      }
     </script>
   </body>
 </html>
