@@ -496,29 +496,34 @@
         window.addEventListener('resize', onResize);
 
         const startTime = performance.now();
-        const DURATION = 2800;
+        const ROTATION_SPEED = 0.025;
+        const FULL_ROTATION = Math.PI * 2;
         const baseZ = getCameraZ();
         let animId;
 
         function animate() {
           const elapsed = performance.now() - startTime;
           const t = elapsed / 1000;
-          const progress = elapsed / DURATION;
           
-          mesh.rotation.y += 0.025;
+          mesh.rotation.y += ROTATION_SPEED;
           mesh.rotation.x = Math.sin(t * 0.8) * 0.15;
           
           const breathe = 1 + Math.sin(t * 3) * 0.05;
           mesh.scale.set(breathe, breathe, breathe);
           
-          if (progress > 0.6) {
-            const zoomProgress = (progress - 0.6) / 0.4;
+          const rotationProgress = (mesh.rotation.y % FULL_ROTATION) / FULL_ROTATION;
+          if (mesh.rotation.y >= FULL_ROTATION && rotationProgress < 0.1) {
+            const zoomProgress = mesh.rotation.y > FULL_ROTATION * 0.8 ? 
+              (mesh.rotation.y - FULL_ROTATION * 0.8) / (FULL_ROTATION * 0.2) : 0;
+            camera.position.z = baseZ + zoomProgress * 200;
+          } else if (mesh.rotation.y > FULL_ROTATION * 0.8) {
+            const zoomProgress = (mesh.rotation.y - FULL_ROTATION * 0.8) / (FULL_ROTATION * 0.2);
             camera.position.z = baseZ + zoomProgress * 200;
           }
           
           effect.render(scene, camera);
 
-          if (elapsed < DURATION) {
+          if (mesh.rotation.y < FULL_ROTATION) {
             animId = requestAnimationFrame(animate);
           } else {
             splash.style.opacity = '0';
